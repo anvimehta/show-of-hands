@@ -36,6 +36,10 @@ h1:link
   margin-left: 10%;
   font-variant: small-caps;
 }
+
+.poll-title h1:visited {
+  text-decoration-color: aqua !important;
+}
 .trending-polls {
   border: none;
   font-variant: small-caps;
