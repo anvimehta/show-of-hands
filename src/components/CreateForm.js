@@ -156,41 +156,44 @@ class CreateForm extends React.Component {
 	render() {
 		let i = 1;
 		const textChoicesList = this.state.textChoices.map((choice) =>
-			<li key={i}>
+		<div>
+			<li className="choices-list" key={i}>
 				<Choice num={i++} text={choice} onChange={this.updateChoiceValue}/>
 				{ i >= 4 ? (
 					<input type="button" value="-" onClick={() => this.removeChoice(choice)}/>
 				) : null
 				}
 			</li>
+			<br/></div>
 		);
 		i = 0;
 		const categories = getCategoryOptions()
 		return (
-			<form onSubmit={this.handleSubmit} >
+			<form className="create-form" onSubmit={this.handleSubmit} >
 
 				{/* Title input */}
-				<label>Poll Title</label>
+				<label>Title</label>
+				<br/>
 				<input required
 				maxLength="40" type="text"
 				id="title-input"
-				placeholder="Enter a title..."
 				value={this.state.title}
 				onChange={e => this.updateValue(e, 'title')}/>
 				<br/>
+				<br />
 
 				{/* Description input */}
-				<label>Poll Description</label>
-				<textarea required maxLength="250"
-				rows="4" id="description-input"
-				placeholder="Enter a short description..."
+				<label>Description</label>
+				<input required maxLength="250" type="text"
+				id="description-input"
 				value={this.state.description}
-				onChange={e => this.updateValue(e, 'description')}></textarea>
+				onChange={e => this.updateValue(e, 'description')}></input>
+				<br/>
 				<br/>
 
 				{/* Choice input */}
-				<label>Response textChoices</label>
-				<ul>{textChoicesList}</ul>
+				<label>Answer Choices:</label>
+				<ul className="choices-list">{textChoicesList}</ul>
 				<br/>
 
 				<input

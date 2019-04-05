@@ -13,7 +13,7 @@ class CreatePage extends React.Component {
 	}
 	render() {
 		return (
-			<div>
+			<div className="create-a-poll">
 				<h1>Create a Poll</h1>
 				<CreateForm onSubmit={poll => this.createPoll(poll)}/>
 			</div>
