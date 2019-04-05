@@ -79,6 +79,7 @@ span {
 }
 
 input[type="text"]{
+    block-size: 50px;
   width: 80%;
   padding: 12px 20px;
   margin-left: 10%;
@@ -95,10 +96,20 @@ input[type="text"]:focus{
     margin-left: 10%;
     display: inline-block;
     border: 1px solid transparent;
-    border-radius: 4px;
     box-sizing: border-box;
     outline-color: #505050;
     outline-width: 1px
+  }
+
+  input[type="button"] {
+    block-size: 50px;
+    padding: 12px 20px;
+    border: none;
+
+  }
+
+  input[type="button"]:hover {
+      background-color: #c9c9c9;
   }
 
 .create-a-poll h1 {
@@ -110,4 +121,75 @@ input[type="text"]:focus{
     margin-left: 10%;
     width: 50%;
 
+}
+
+select {
+    block-size: 50px;
+    width: 80%;
+    padding: 12px 20px;
+    display: inline-block;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    box-sizing: border-box;
+    outline-color: #505050;
+    outline-width: 1px;
+    background-color: white;
+    margin-left: 10% !important;
+}
+.select-items {
+    position: absolute;
+    background-color: DodgerBlue;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+  }
+
+  input[type="date"]
+  {
+    block-size: 50px;
+    width: 80%;
+    padding: 12px 20px;
+    display: inline-block;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    box-sizing: border-box;
+    outline-color: #505050;
+    outline-width: 1px;
+    background-color: white;
+    margin-left: 10% !important;
+  }
+
+  input[type="checkbox"] {
+    margin-left: 10%;
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;  
+}
+
+input[type="submit"] {
+    block-size: 50px;
+    width: 80%;
+    padding: 12px 20px;
+    display: inline-block;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    box-sizing: border-box;
+    outline-color: #505050;
+    outline-width: 1px;
+    background-color: #2b2d30;
+    margin-left: 10% !important;
+    color: white;
+}
+
+input[type="submit"]:hover {
+    cursor: pointer;
+    background-color: #4b4d51;
 }

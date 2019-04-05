@@ -172,20 +172,22 @@ class CreateForm extends React.Component {
 			<form className="create-form" onSubmit={this.handleSubmit} >
 
 				{/* Title input */}
-				<label>Title</label>
+				<label>Title:</label>
 				<br/>
 				<input required
 				maxLength="40" type="text"
 				id="title-input"
+				placeholder="Enter title"
 				value={this.state.title}
 				onChange={e => this.updateValue(e, 'title')}/>
 				<br/>
 				<br />
 
 				{/* Description input */}
-				<label>Description</label>
+				<label>Description:</label>
 				<input required maxLength="250" type="text"
 				id="description-input"
+				placeholder="Enter description"
 				value={this.state.description}
 				onChange={e => this.updateValue(e, 'description')}></input>
 				<br/>
@@ -194,26 +196,28 @@ class CreateForm extends React.Component {
 				{/* Choice input */}
 				<label>Answer Choices:</label>
 				<ul className="choices-list">{textChoicesList}</ul>
-				<br/>
 
 				<input
 					type="text"
 					id="choice-input"
 					value={this.state.newChoiceText}
 					onChange={e => this.updateValue(e, 'newChoiceText')}
-					placeholder="Add a new choice..."/>
+					placeholder="Add another choice"/>
 				<input type="button" onClick={e => this.handleNewChoiceClick(e)} value="+"></input>
 				<br/>
+				<br/>
 
-				<label>Poll Category</label>
+				<label>Poll Category:</label>
+				<br/>
 				<select id="select-category" value={this.state.category}
 				onChange={e => this.updateValue(e, 'category')}>
 					{categories}
 				</select>
 				<br/>
-
+				<br/>
 				{/* Lifespan input */}
 				<label>This poll will end on:</label>
+				<br/>
 				<input
 					type="date"
 					value={this.state.end_date}
@@ -221,15 +225,18 @@ class CreateForm extends React.Component {
 					max={this.getDate(1, 0)}
 					onChange={e => this.updateValue(e, 'end_date')}/>
 				<br/>
-
-				{/* Public results input */}
-				<input type="checkbox"
-				id="private-results" checked={!this.state.public_results}
-				onChange={e => this.updatePublicResults(e)} />
-				<label>Make end results private</label>
 				<br/>
 
-				<input type="submit" value="Save"/>
+				{/* Public results input */}
+				<label>Make end results private?</label>
+				<input type="checkbox"
+				id="private-results" checked={!this.state.public_results}
+				onChange={e => this.updatePublicResults(e)}/>
+				<br/>
+
+				<input type="submit" value="Save Poll"/>
+				<br/>
+				<br/>
 			</form>
 		);
 	}
