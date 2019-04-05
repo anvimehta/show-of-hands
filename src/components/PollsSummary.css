@@ -193,3 +193,43 @@ input[type="submit"]:hover {
     cursor: pointer;
     background-color: #4b4d51;
 }
+
+.viewing-polls h1 {
+    text-align: center;
+}
+
+.filters {
+    margin-left: 0%;
+}
+
+.filters span {
+    margin-left: 10% !important;
+    font-variant: small-caps;
+    font-size: 30px;
+}
+.filters label {
+    font-size: 20px;
+    margin-left: 10%;
+    font-variant: normal;
+}
+
+.filters select {
+    margin: 1%;
+    width: 50%;
+    display: inline-block !important;
+}
+
+.filters input[type="text"] {
+    margin-left: 10% !important;
+    width: 50% !important;
+    display: inline-block !important;
+}
+
+.DateRangePicker {
+    border: none;
+    border-color: white;
+    font-family: 'Arial';
+    width: 50%;
+    margin-left: 10%;
+    display: inline-block !important;
+}
