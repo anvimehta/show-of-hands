@@ -16,8 +16,8 @@ export const Header = ({ startLogout }) => (
 	<ul>
   <li><a href="/add-poll">Create a poll</a></li>
   <li><a href="/polls">View polls</a></li>
+  <li><a href="/poll-created">Polls Created</a></li>
   <li><a href="/dashboard">User Dashboard</a></li>
-
   <li> <a onClick={startLogout}>Logout</a></li>
 </ul>
 	</div>

@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import * as firebase from 'firebase';
 import { startAnswerPoll, startGetPoll } from '../actions/polls';
 import getPoll from '../selectors/get-poll';
+import PhoneNumber from './PhoneNumber';
 
 let UID;
 let user = firebase.auth();
@@ -25,6 +26,7 @@ class DashboardPage extends React.Component {
                 <p>Email:           {user.email}</p>
                 <p>User ID:         {user.uid}</p>
                 <p>Phone number:    {user.phoneNumber ? user.phoneNumber : "None provided"}</p>
+                <PhoneNumber phoneNunber={user.phoneNunber} />
             </div>
         );
     }
