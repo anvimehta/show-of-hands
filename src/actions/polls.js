@@ -97,7 +97,7 @@ export const startEditPoll = (id, newData) => {
 
 export const likePoll=(id)=>{
 return(dispatch)=>{
-  
+
 }
 }
 
@@ -148,9 +148,5 @@ export const answerPoll = (id, updates) => ({
   id,
   updates
 });
-//LIKE A POLL
-export const likePoll=(id,updates)=>({
-  type:'LIKE_POLL',
-  id,
-  updates
-})
+
+

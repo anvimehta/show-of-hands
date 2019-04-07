@@ -27,15 +27,12 @@ export const ViewPollItem = ({ poll }) => {
                     Answer
                 </button>
             </Link>
-            <button onClick={likePoll(poll.likes)}> Like </button>
+            <button> Like </button>
         </div>
     );
 };
 ////LIKE A POLL////
-function likePoll(){
-poll.likes+=1;
-return poll.likes;
-}
+
 //LIKING A POLL
 const mapStateToProps = (state) => {
     const poll = getPoll(state.poll);
