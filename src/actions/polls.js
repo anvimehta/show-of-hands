@@ -27,7 +27,9 @@ export const startAddPoll = (pollData = {}) => {
             choices = [],
             start_date = new Date(),
             end_date = new Date(),
-            public_results = false
+            public_results = false,
+            //making a change
+            likes =0
         } = pollData;
 
         const poll = {
@@ -37,7 +39,8 @@ export const startAddPoll = (pollData = {}) => {
             choices,
             start_date,
             end_date,
-            public_results
+            public_results,
+            likes
         };
 
         poll.start_date = new Date(poll.start_date).getTime()
