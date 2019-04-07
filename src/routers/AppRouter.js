@@ -1,16 +1,15 @@
 import React from 'react';
 import { Router, Route, Switch, Link, NavLink } from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory';
-import ViewPage from '../components/ViewPage';
-import AddPollPage from '../components/AddPollPage';
-import AnswerPollPage from '../components/AnswerPollPage';
-import CreatePage from '../components/CreatePage';
-import EditPollPage from '../components/EditPollPage';
-import DashboardPage from '../components/DashboardPage';
-import NotFoundPage from '../components/NotFoundPage';
-import WelcomePage from '../components/WelcomePage';
 import LoginPage from '../components/LoginPage';
+import WelcomePage from '../components/WelcomePage';
+import DashboardPage from '../components/DashboardPage';
+import ViewPage from '../components/ViewPage';
 import ViewPollPage from '../components/ViewPollPage';
+import CreatePage from '../components/CreatePage';
+import AnswerPollPage from '../components/AnswerPollPage';
+import EditPollPage from '../components/EditPollPage';
+import NotFoundPage from '../components/NotFoundPage';
 
 import PrivateRoute from './PrivateRoute';
 import PublicRoute from './PublicRoute';
