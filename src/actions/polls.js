@@ -28,8 +28,6 @@ export const startAddPoll = (pollData = {}) => {
             start_date = new Date(),
             end_date = new Date(),
             public_results = false,
-            //making a change
-            likes =0
         } = pollData;
 
         const poll = {
@@ -46,6 +44,7 @@ export const startAddPoll = (pollData = {}) => {
         poll.start_date = new Date(poll.start_date).getTime()
         poll.end_date = new Date(poll.end_date).getTime()
         poll.author = getState().auth.uid
+        poll.likes=0;
 
         database.ref('polls').push(poll).then((ref) => {
             dispatch(getPoll({
@@ -96,6 +95,11 @@ export const startEditPoll = (id, newData) => {
     };
 };
 
+export const likePoll=(id)=>{
+return(dispatch)=>{
+  
+}
+}
 
 export const startRemovePoll = (id) => {
     return (dispatch) => {
@@ -144,3 +148,9 @@ export const answerPoll = (id, updates) => ({
   id,
   updates
 });
+//LIKE A POLL
+export const likePoll=(id,updates)=>({
+  type:'LIKE_POLL',
+  id,
+  updates
+})
