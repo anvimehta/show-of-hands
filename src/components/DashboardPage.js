@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import * as firebase from 'firebase';
 import { startAnswerPoll, startGetPoll } from '../actions/polls';
+import { updateUser, getUser } from '../actions/auth';
 import getPoll from '../selectors/get-poll';
 import PhoneNumber from './PhoneNumber';
 
@@ -9,24 +10,55 @@ let UID;
 let user = firebase.auth();
 
 class DashboardPage extends React.Component {
+    constructor (props) {
+        super(props)
+        this.saveProfileData = this.saveProfileData.bind(this)
+        this.userData = {
+            phone_number: user.phone_number
+        }
+        this.state = {}
+    }
+    componentDidMount () {
+        getUser(this.props.uid, (err, user) => {
+            this.setState({
+                user
+            })
+        })
+    }
+    onUserDataChange (field, value) {
+        this.userData[field] = value
+    }
+    saveProfileData () {
+        updateUser(this.props.uid, this.userData).then(() => {
+            location.reload();
+        })
+    }
     render() {
-        user = firebase.auth().currentUser;
-        if (user) console.log(user); else console.log("No user found.");
+        user = this.state.user 
+
+        if (!user) {
+            return null
+        }
+
         return (
             <div>
-
                 <h1>
                     <img
-                    src={user.photoURL}
-                    alt={user.displayName + "'s profile picture"}
+                    src={user.photo_url}
+                    alt={user.display_name + "'s profile picture"}
                     width="70"
                     height="70"/>
-                    {user.displayName}'s Dashboard
+                    {user.display_name}'s Dashboard
                 </h1>
                 <p>Email:           {user.email}</p>
-                <p>User ID:         {user.uid}</p>
-                <p>Phone number:    {user.phoneNumber ? user.phoneNumber : "None provided"}</p>
-                <PhoneNumber phoneNunber={user.phoneNunber} />
+                <p>User ID:         {user.id}</p>
+                <p>Phone number:    {user.phoneNumber ? user.phone_number : "None provided"}</p>
+                <PhoneNumber
+                    phoneNumber={user.phone_number}
+                    onChange={this.onUserDataChange.bind(this, "phone_number")}
+                />
+                <br/>
+                <button onClick={this.saveProfileData} className="button">Save</button>
             </div>
         );
     }
