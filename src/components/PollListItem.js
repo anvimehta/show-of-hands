@@ -29,6 +29,8 @@ class PollListItem extends React.Component {
 		//.	DISPLAY.	 +----- DO NOT DISPLAY
 		//.	RESULTS.			THE RESULTS
 
+
+
 		const choicesList = (this.poll.choices || []).map((choice, index) =>
 			<li key={index}>
 				<ChoiceListItem
