@@ -9,7 +9,7 @@ export const PollsSummary = ({ pollCount, pollsTotal }) => {
 	const pollWord = pollCount === 1 ? 'poll' : 'polls' ;
 
 	return (
-    	<div>
+    	<div className="viewing-polls">
     		<h1>Viewing <b>{pollCount}</b> {pollWord}</h1>
     	</div>
 	);

@@ -15,6 +15,7 @@ import ViewPollPage from '../components/ViewPollPage';
 
 import PrivateRoute from './PrivateRoute';
 import PublicRoute from './PublicRoute';
+import LoadingPage from '../components/LoadingPage';
 
 export const history = createHistory();
 
@@ -32,6 +33,7 @@ const AppRouter = () => (
         <PrivateRoute path="/polls/:id" component={ViewPollPage} exact={true} />
         <PrivateRoute path="/polls/:id/edit" component={EditPollPage} exact={true} />
         <PrivateRoute path="/polls/:id/answer" component={AnswerPollPage} exact={true} />
+        <PrivateRoute path="/loading" component={LoadingPage} exact={true} />
         <Route component={NotFoundPage} />
       </Switch>
     </div>

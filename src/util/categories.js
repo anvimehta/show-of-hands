@@ -1,12 +1,12 @@
 import React from 'react';
 
 const CATEGORIES = [
-	'ENTERTAINMENT',
-	'FOOD',
-	'LIFESTYLE',
-	'MISCELLANEOUS',
-	'SURVEY',
-	'TECHNOLOGY'
+	'Entertainment',
+	'Food',
+	'Lifestyle',
+	'Miscellanous',
+	'Survey',
+	'Technology'
 ];
 
 export const getCategoryOptions = () => {
