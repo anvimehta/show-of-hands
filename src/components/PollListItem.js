@@ -29,9 +29,20 @@ class PollListItem extends React.Component {
 		//.	DISPLAY.	 +----- DO NOT DISPLAY
 		//.	RESULTS.			THE RESULTS
 
-		const choicesList = (this.poll.choices || []).map((choice) =>
-			<li><ChoiceListItem text={choice.text} votes={choice.votes} isVisible={this.poll.public_results && Object(this.poll.responses)[this.props.uid]}/></li>
+		const choicesList = (this.poll.choices || []).map((choice, index) =>
+			<li key={index}>
+				<ChoiceListItem
+					text={choice.text}
+					votes={choice.votes}
+					isVisible={
+						this.props.uid === this.poll.author || (
+							this.poll.public_results && Object(this.poll.responses)[this.props.uid]
+						)
+					}
+				/>
+			</li>
 		);
+
 		let total_votes = 0;
 		for (let i = 0; i < this.poll.choices.length; i++) {
 			total_votes += this.poll.choices[i].votes;

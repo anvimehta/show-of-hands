@@ -58,7 +58,7 @@ export class ViewPollItem extends React.Component {
 
 		return (
 			<div>
-				<PollListItem data={poll} />
+				<PollListItem uid={this.props.uid} data={poll} />
 				{
 					poll && poll.editable ? <Link to={`/polls/${id}/edit`}>
 						<button className="button">
