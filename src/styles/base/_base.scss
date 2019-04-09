@@ -29,3 +29,10 @@ button:disabled {
 .is-active {
   font-weight: bold;
 }
+
+.error-alert {
+    color: red;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+}

@@ -9,6 +9,7 @@ const countResponses = r => Object.keys(r.responses || {}).length
 
 export const listAllPolls = (pollData = {}) => {
   return (dispatch) => {
+    
     database.ref('polls').once("value").then((polls) => {
       polls = polls.val()
       const pollsArray = Object.keys(polls).map(id => {
