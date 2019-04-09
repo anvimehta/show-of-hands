@@ -93,6 +93,8 @@ export class PollListFilters extends React.Component {
         			<option value="DATE_DESC">Date (newest first)</option>
         			<option value="NUMBER_OF_RESPONSES_ASC">Number of Responses (asc.)</option>
         			<option value="NUMBER_OF_RESPONSES_DESC">Number of Responses (desc.)</option>
+        			<option value="NUMBER_OF_LIKES_ASC">Number of Likes (asc.)</option>
+        			<option value="NUMBER_OF_LIKES_DESC">Number of Likes (desc.)</option>
         		</select>
 				<br/>
         		<hr/>
