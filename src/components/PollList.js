@@ -38,7 +38,7 @@ class PollList extends React.Component {
 			return <PollListItem uid={props.uid} key={poll.id} data={poll} />;
 		});
 
-		return <div>{pollItems}</div>;
+		return <div className="poll-list">{pollItems}</div>;
 	}
 }
 
