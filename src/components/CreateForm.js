@@ -156,61 +156,68 @@ class CreateForm extends React.Component {
 	render() {
 		let i = 1;
 		const textChoicesList = this.state.textChoices.map((choice) =>
-			<li key={i}>
+		<div>
+			<li className="choices-list" key={i}>
 				<Choice num={i++} text={choice} onChange={this.updateChoiceValue}/>
 				{ i >= 4 ? (
 					<input type="button" value="-" onClick={() => this.removeChoice(choice)}/>
 				) : null
 				}
 			</li>
+			<br/></div>
 		);
 		i = 0;
 		const categories = getCategoryOptions()
 		return (
-			<form onSubmit={this.handleSubmit} >
+			<form className="create-form" onSubmit={this.handleSubmit} >
 
 				{/* Title input */}
-				<label>Poll Title</label>
+				<label>Title:</label>
+				<br/>
 				<input required
 				maxLength="40" type="text"
 				id="title-input"
-				placeholder="Enter a title..."
+				placeholder="Enter title"
 				value={this.state.title}
 				onChange={e => this.updateValue(e, 'title')}/>
 				<br/>
+				<br />
 
 				{/* Description input */}
-				<label>Poll Description</label>
-				<textarea required maxLength="250"
-				rows="4" id="description-input"
-				placeholder="Enter a short description..."
+				<label>Description:</label>
+				<input required maxLength="250" type="text"
+				id="description-input"
+				placeholder="Enter description"
 				value={this.state.description}
-				onChange={e => this.updateValue(e, 'description')}></textarea>
+				onChange={e => this.updateValue(e, 'description')}></input>
+				<br/>
 				<br/>
 
 				{/* Choice input */}
-				<label>Response textChoices</label>
-				<ul>{textChoicesList}</ul>
-				<br/>
+				<label>Answer Choices:</label>
+				<ul className="choices-list">{textChoicesList}</ul>
 
 				<input
 					type="text"
 					id="choice-input"
 					value={this.state.newChoiceText}
 					onChange={e => this.updateValue(e, 'newChoiceText')}
-					placeholder="Add a new choice..."/>
+					placeholder="Add another choice"/>
 				<input type="button" onClick={e => this.handleNewChoiceClick(e)} value="+"></input>
 				<br/>
+				<br/>
 
-				<label>Poll Category</label>
+				<label>Poll Category:</label>
+				<br/>
 				<select id="select-category" value={this.state.category}
 				onChange={e => this.updateValue(e, 'category')}>
 					{categories}
 				</select>
 				<br/>
-
+				<br/>
 				{/* Lifespan input */}
 				<label>This poll will end on:</label>
+				<br/>
 				<input
 					type="date"
 					value={this.state.end_date}
@@ -218,15 +225,18 @@ class CreateForm extends React.Component {
 					max={this.getDate(1, 0)}
 					onChange={e => this.updateValue(e, 'end_date')}/>
 				<br/>
-
-				{/* Public results input */}
-				<input type="checkbox"
-				id="private-results" checked={!this.state.public_results}
-				onChange={e => this.updatePublicResults(e)} />
-				<label>Make end results private</label>
 				<br/>
 
-				<input type="submit" value="Save"/>
+				{/* Public results input */}
+				<label>Make end results private?</label>
+				<input type="checkbox"
+				id="private-results" checked={!this.state.public_results}
+				onChange={e => this.updatePublicResults(e)}/>
+				<br/>
+
+				<input type="submit" value="Save Poll"/>
+				<br/>
+				<br/>
 			</form>
 		);
 	}

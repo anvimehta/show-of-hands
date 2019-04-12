@@ -46,29 +46,32 @@ export class PollListFilters extends React.Component {
 	render() {
     	const { filters } = this.props;
     	return (
-    		<div>
-        		<span>Filters</span><br/>
+    		<div className="filters">
+			<br/>
+        		<span>Filter by</span><br/>
         		<select
         			id="select-category"
         			onChange={this.onCategoryChange}
         		>
-        			<option value="">Category</option>
+        			<option value="">Select Category</option>
         			{getCategoryOptions()}
         		</select>
-        		<input
-        			type="text"
-        			value={this.state.textFilter || ""}
-        			onChange={this.onTextChange}
-        			placeholder="Search"
-        		/>
+        		
         		<select
         			onChange={this.onStatusChange}
         		>
-        			<option value="">All Polls</option>
-        			<option selected value="ACTIVE">Active Polls</option>
+        			<option selected value="">Select Active Status</option>
+        			<option value="ACTIVE">Active Polls</option>
         			<option value="INACTIVE">Inactive Polls</option>
         		</select>
-        		<br/>
+        		<br/><br/>
+				<input
+        			type="text"
+        			value={this.state.textFilter || ""}
+        			onChange={this.onTextChange}
+        			placeholder="Search by keyword"
+        		/>
+				<br/><br/>
         		<DateRangePicker
         			startDate={filters ? filters.startDate : null}
         			endDate={filters ? filters.endDate : null}
@@ -80,17 +83,20 @@ export class PollListFilters extends React.Component {
         			isOutsideRange={() => false}
         		/>
         		<br/><br/>
-        		<span>Sort</span>
+        		<span>Sort:</span>
+				<br/>
         		<select
         			onChange={this.onSortChange}
         		>
-        			<option value="">Sort</option>
+					<option value ="">Sort by</option>
         			<option value="DATE_ASC">Date (oldest first)</option>
         			<option value="DATE_DESC">Date (newest first)</option>
         			<option value="NUMBER_OF_RESPONSES_ASC">Number of Responses (asc.)</option>
         			<option value="NUMBER_OF_RESPONSES_DESC">Number of Responses (desc.)</option>
         		</select>
+				<br/>
         		<hr/>
+				<br/>
     		</div>
     	);
 	}
