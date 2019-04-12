@@ -46,3 +46,7 @@ body {
     border-style: hidden;
     margin: 10%;
 }
+
+.my-dashboard {
+    align-self: center;
+}
