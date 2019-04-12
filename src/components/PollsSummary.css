@@ -32,13 +32,17 @@ div#poll-card {
 #poll-card:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   }
+
+p {
+    font-family: 'PT Sans', sans-serif !important;
+}
   
 h1 {
     position: relative;
     border-style: double;
     border-left-width: 0.5em;
     margin: 50%;
-    font-family: Georgia, serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: #13315b;
     text-decoration: #fffcfc;
     text-decoration-line: #fffcfc;
@@ -48,19 +52,21 @@ h1:visited {
     color: #13315b;
     text-decoration: #fffcfc;
     text-decoration-line: #fffcfc;
+    font-weight: normal;
 }
 
 .header__title h1 {
+    
     text-align: left;
     border-style: none !important; 
     font-variant: small-caps;
-    font-family: Georgia, serif;
+    font-family: 'font-family: Verdana, Geneva, Tahoma, sans-serif;', sans-serif;
     color: white;
 }
 
 h3 {
     color: black !important;
-    font-family: Georgia, serif;
+    font-family: 'font-family: Verdana, Geneva, Tahoma, sans-serif;', sans-serif;
     font-variant: small-caps;
     border-style: dotted;
     border-color: #fffcfc;
@@ -68,14 +74,14 @@ h3 {
 }
 
 p {
-    font-family: Georgia, serif;
+    font-family: 'font-family: Verdana, Geneva, Tahoma, sans-serif;', sans-serif;
     margin-left: 1%;
     color: black !important;
 }
 
 label {
     color: black !important;
-    font-family: Georgia, serif;
+    font-family: 'font-family: Verdana, Geneva, Tahoma, sans-serif;', sans-serif;
     margin-left: 1%;
 }
 
@@ -84,7 +90,7 @@ label {
 }
 
 span {
-    font-family: Georgia, serif;
+    font-family: 'font-family: Verdana, Geneva, Tahoma, sans-serif;', sans-serif;
     color: black !important;
 }
 
