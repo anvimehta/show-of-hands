@@ -56,7 +56,7 @@ export class PollListFilters extends React.Component {
         			<option value="">Select Category</option>
         			{getCategoryOptions()}
         		</select>
-
+        		
         		<select
         			onChange={this.onStatusChange}
         		>
@@ -89,10 +89,10 @@ export class PollListFilters extends React.Component {
         			onChange={this.onSortChange}
         		>
 					<option value ="">Sort by</option>
+        			<option value="DATE_ASC">Date (oldest first)</option>
+        			<option value="DATE_DESC">Date (newest first)</option>
         			<option value="NUMBER_OF_RESPONSES_ASC">Number of Responses (asc.)</option>
         			<option value="NUMBER_OF_RESPONSES_DESC">Number of Responses (desc.)</option>
-        			<option value="NUMBER_OF_LIKES_ASC">Number of Likes (asc.)</option>
-        			<option value="NUMBER_OF_LIKES_DESC">Number of Likes (desc.)</option>
         		</select>
 				<br/>
         		<hr/>

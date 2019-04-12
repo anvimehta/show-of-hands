@@ -4,8 +4,6 @@ import firebase from '../firebase/firebase';
 
 // Check if the poll is expired
 const isExpired = poll => new Date(poll.end_date) < new Date()
-const likeCount = poll => Object.keys(poll.likes || {}).length
-const countResponses = r => Object.keys(r.responses || {}).length
 
 export const listAllPolls = (pollData = {}) => {
   return (dispatch) => {
@@ -13,8 +11,6 @@ export const listAllPolls = (pollData = {}) => {
       polls = polls.val()
       const pollsArray = Object.keys(polls).map(id => {
         polls[id].id = id
-        polls[id].like_count = likeCount(polls[id])
-        polls[id].response_count = countResponses(polls[id])
         return polls[id]
       })
       dispatch(listPolls(pollsArray))
@@ -66,8 +62,6 @@ export const startGetPoll = (pollData = {}) => {
         window.location = "/polls"
         return;
       }
-      poll.like_count = likeCount(poll)
-      poll.response_count = countResponses(poll)
       dispatch(getPoll(poll));
     }).catch(e => console.error(e))
   };
