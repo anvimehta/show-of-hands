@@ -41,9 +41,11 @@ h1:link
   text-decoration-color: aqua !important;
 }
 .trending-polls {
+  font-family: 'PT Sans', sans-serif;
   border: none;
   font-variant: small-caps;
   text-align: center;
+  font-size: 40px;
 }
 
 
@@ -60,7 +62,7 @@ h1:link
 }
 
  li a {
-  font-family: Georgia, serif;
+  font-family: 'PT Sans', sans-serif;
   display: block;
   color: white;
   text-align: center;
