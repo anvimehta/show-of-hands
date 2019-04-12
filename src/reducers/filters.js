@@ -4,7 +4,7 @@ import moment from 'moment';
 
 const filtersReducerDefaultState = {
   text: '',
-  sortBy: 'date',
+  sortBy: 'like_count',
   startDate: moment().startOf('month'),
   endDate: moment().endOf('month'),
   pollStatus: "ACTIVE"
@@ -24,10 +24,10 @@ export default (state = filtersReducerDefaultState, action) => {
       return Object.assign(state, {
         pollStatus: action.status
       });
-    case "DATE_ASC":
-    case "DATE_DESC":
     case "NUMBER_OF_RESPONSES_ASC":
     case "NUMBER_OF_RESPONSES_DESC":
+    case "NUMBER_OF_LIKES_ASC":
+    case "NUMBER_OF_LIKES_DESC":
       return Object.assign(state, {
         sortBy: action.type
       });

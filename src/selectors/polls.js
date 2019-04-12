@@ -21,6 +21,7 @@ export default (polls, o) => {
   }
 
   const { category, text, sortBy, startDate, endDate, pollStatus } = o;
+
   return polls.polls.filter((poll) => {
     const createdAtMoment = moment(poll.start_date);
     const startDateMatch = startDate ? startDate.isSameOrBefore(createdAtMoment, 'day') : true;
@@ -31,20 +32,20 @@ export default (polls, o) => {
     const isTrendingMatch = pollStatus === "TRENDING" ? getPollTrendingIndex(poll) > IS_TRENDING_POLL_MIN : true
     return startDateMatch && endDateMatch && textMatch && categoryMatch && pollStatusMatch && isTrendingMatch;
   }).sort((a, b) => {
-      const countRes = r => Object.keys(r.responses || {}).length
 
       switch (sortBy) {
-        case "DATE_ASC":
-          return a.start_date > b.start_date ? -1 : 1;
-
-        case "DATE_DESC":
-          return a.start_date < b.start_date ? -1 : 1;
 
         case "NUMBER_OF_RESPONSES_ASC":
-          return countRes(a) < countRes(b) ? -1 : 1;
+          return a.response_count < b.response_count ? -1 : 1;
 
         case "NUMBER_OF_RESPONSES_DESC":
-          return countRes(a) > countRes(b) ? -1 : 1;
+          return a.response_count > b.response_count ? -1 : 1;
+
+        case "NUMBER_OF_LIKES_ASC":
+          return a.like_count < b.like_count ? -1 : 1;
+
+        case "NUMBER_OF_LIKES_DESC":
+          return a.like_count > b.like_count ? -1 : 1;
       }
   });
 };
