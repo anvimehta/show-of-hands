@@ -10,9 +10,19 @@
     border: 1px;
     box-sizing: content-box;
     background-color: white !important;
-    width: 48%;
     margin: 1%;
     display: inline-block;
+}
+
+div#poll-card {
+    width: 100%;
+}
+
+
+@media (min-width: 700px) {
+    div.poll-list #poll-card {
+        width: 40%;
+    }   
 }
 
 #poll-card-link div {
