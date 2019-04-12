@@ -42,7 +42,7 @@ h1 {
     border-style: double;
     border-left-width: 0.5em;
     margin: 50%;
-    font-family: 'PT Sans', sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: #13315b;
     text-decoration: #fffcfc;
     text-decoration-line: #fffcfc;
@@ -60,13 +60,13 @@ h1:visited {
     text-align: left;
     border-style: none !important; 
     font-variant: small-caps;
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'font-family: Verdana, Geneva, Tahoma, sans-serif;', sans-serif;
     color: white;
 }
 
 h3 {
     color: black !important;
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'font-family: Verdana, Geneva, Tahoma, sans-serif;', sans-serif;
     font-variant: small-caps;
     border-style: dotted;
     border-color: #fffcfc;
@@ -74,14 +74,14 @@ h3 {
 }
 
 p {
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'font-family: Verdana, Geneva, Tahoma, sans-serif;', sans-serif;
     margin-left: 1%;
     color: black !important;
 }
 
 label {
     color: black !important;
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'font-family: Verdana, Geneva, Tahoma, sans-serif;', sans-serif;
     margin-left: 1%;
 }
 
@@ -90,7 +90,7 @@ label {
 }
 
 span {
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'font-family: Verdana, Geneva, Tahoma, sans-serif;', sans-serif;
     color: black !important;
 }
 

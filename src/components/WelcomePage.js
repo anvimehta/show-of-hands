@@ -7,7 +7,7 @@ import { listAllPolls } from '../actions/polls';
 const WelcomePage = (props) => (
 	<div>
 	<div>
-	<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet"/>
+	<link href="https://fonts.googleapis.com/css?family=font-family: Verdana, Geneva, Tahoma, sans-serif;" rel="stylesheet"/>
 			<h1 className="trending-polls">Trending Polls</h1>
 		<TrendingList />
 	</div>
