@@ -28,7 +28,7 @@ export class ViewPollItem extends React.Component {
 	}
 	updateDb () {
 		startEditPoll(this.props.poll.id, {
-			likes: this.props.poll.likes 
+			likes: this.props.poll.likes
 		})(function () {})
 	}
 	likePoll () {
@@ -77,6 +77,8 @@ export class ViewPollItem extends React.Component {
 					{ this.isLikedAlready() ? "Unlike" : "Like" }<br/>
 					<small>({this.likeCount()} likes)</small>
 				</button>
+				<p id="p">Share this link: localhost:8080/polls/{id}</p>
+				{ " " }
 			</div>
 		);
 	}
