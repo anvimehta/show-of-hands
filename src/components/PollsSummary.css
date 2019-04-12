@@ -42,6 +42,7 @@ h1:visited {
     color: #13315b;
     text-decoration: #fffcfc;
     text-decoration-line: #fffcfc;
+    font-weight: normal;
 }
 
 .header__title h1 {

@@ -14,16 +14,15 @@ class DashboardPage extends React.Component {
         return (
             <div>
 
-                <h1>
+                <h1 id="my-dashboard">My Dashboard</h1>
                     <img
                     src={user.photoURL}
                     alt={user.displayName + "'s profile picture"}
                     width="70"
                     height="70"/>
+                    <br  />
                     {user.displayName}'s Dashboard
-                </h1>
                 <p>Email:           {user.email}</p>
-                <p>User ID:         {user.uid}</p>
                 <p>Phone number:    {user.phoneNumber ? user.phoneNumber : "None provided"}</p>
             </div>
         );
