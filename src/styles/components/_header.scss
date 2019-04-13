@@ -61,6 +61,7 @@ h1:link
   float: left;
 }
 
+
  li a {
   font-family: 'PT Sans', sans-serif;
   display: block;
@@ -73,5 +74,6 @@ h1:link
 
 li a:hover
 {
+  cursor: pointer;
   color: #d2d4d8;
 }
