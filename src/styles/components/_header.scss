@@ -1,10 +1,10 @@
 .header {
-  background: #0f3644;
+  background: #09665f;
 }
 
 body 
 {
-  background-color: #f7f7f7 !important;
+  background-color: #e0f9f8 !important;
 }
 .header__content {
   align-items: center;
@@ -41,7 +41,7 @@ h1:link
   text-decoration-color: aqua !important;
 }
 .trending-polls {
-  font-family: 'font-family: Verdana, Geneva, Tahoma, sans-serif;', sans-serif;
+  font-family: 'PT Sans', sans-serif;
   border: none;
   font-variant: small-caps;
   text-align: center;
@@ -54,15 +54,16 @@ h1:link
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #0f3644;
+  background-color: #09665f;
 }
 
 .navbar li {
   float: left;
 }
 
+
  li a {
-  font-family: 'font-family: Verdana, Geneva, Tahoma, sans-serif;', sans-serif;
+  font-family: 'PT Sans', sans-serif;
   display: block;
   color: white;
   text-align: center;
@@ -73,5 +74,6 @@ h1:link
 
 li a:hover
 {
+  cursor: pointer;
   color: #d2d4d8;
 }

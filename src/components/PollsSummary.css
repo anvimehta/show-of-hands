@@ -9,13 +9,14 @@
     box-pack: inherit;  
     border: 1px;
     box-sizing: content-box;
-    background-color: white !important;
+    background-color: #f2f9f9 !important;
     margin: 1%;
     display: inline-block;
+
 }
 
-div#poll-card {
-    width: 100%;
+div #poll-card {
+    width: 48%;
 }
 
 
@@ -48,6 +49,24 @@ h1 {
     text-decoration-line: #fffcfc;
     border-color: transparent;
 }
+
+#poll-card h1 {
+    font-variant: normal;
+    margin: 2%;
+    font-weight: 500;
+    text-decoration: none !important;
+    text-decoration-line: none !important;
+    font-family: 'PT Sans', sans-serif; 
+    text-align: center;
+}
+
+#poll-card p {
+    margin-left: 5%;
+}
+
+#poll-card h3 {
+    margin-left: 5%;
+}
 h1:visited {
     color: #13315b;
     text-decoration: #fffcfc;
@@ -56,33 +75,31 @@ h1:visited {
 }
 
 .header__title h1 {
-    
     text-align: left;
     border-style: none !important; 
     font-variant: small-caps;
-    font-family: 'font-family: Verdana, Geneva, Tahoma, sans-serif;', sans-serif;
+    font-family: 'PT Sans', sans-serif; 
     color: white;
 }
 
 h3 {
     color: black !important;
-    font-family: 'font-family: Verdana, Geneva, Tahoma, sans-serif;', sans-serif;
+    font-family: 'PT Sans', sans-serif;
     font-variant: small-caps;
     border-style: dotted;
-    border-color: #fffcfc;
-    border-left-width: 0.5em;
+    border-color: transparent;
 }
 
 p {
-    font-family: 'font-family: Verdana, Geneva, Tahoma, sans-serif;', sans-serif;
+    font-family: 'PT Sans', sans-serif ;
     margin-left: 1%;
     color: black !important;
 }
 
 label {
     color: black !important;
-    font-family: 'font-family: Verdana, Geneva, Tahoma, sans-serif;', sans-serif;
-    margin-left: 1%;
+    font-family: 'PT Sans', sans-serif;
+    margin-left: 5%;
 }
 
 .create-form label {
@@ -90,7 +107,7 @@ label {
 }
 
 span {
-    font-family: 'font-family: Verdana, Geneva, Tahoma, sans-serif;', sans-serif;
+    font-family: 'PT Sans', sans-serif ;
     color: black !important;
 }
 
@@ -130,6 +147,8 @@ input[type="text"]:focus{
 
 .create-a-poll h1 {
     text-align: center;
+    font-weight: normal;
+    font-variant: small-caps;
 }
 
 .choices-list li {
@@ -243,9 +262,27 @@ input[type="submit"]:hover {
 
 .DateRangePicker {
     border: none;
-    border-color: white;
+    border-color: transparent;
     font-family: 'Arial';
     width: 50%;
     margin-left: 10%;
     display: inline-block !important;
 }
+
+#link {
+    color: hotpink !important;
+  }
+
+  a {
+      text-decoration: none !important;
+  }
+
+  ul {
+    list-style-type: none;
+    list-style-position: outside;
+  }
+
+  #poll-card li::before {
+      content: "     •    " !important;
+      color: black !important;
+  }
