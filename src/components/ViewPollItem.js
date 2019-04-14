@@ -5,7 +5,7 @@ import PollListItem from './PollListItem';
 import getPoll from '../selectors/get-poll';
 import { Link } from 'react-router-dom';
 import moment from 'moment';
-import { startEditPoll } from '../actions/polls';
+
 
 export class ViewPollItem extends React.Component {
 	constructor (props) {
