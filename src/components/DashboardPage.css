@@ -1,5 +1,5 @@
 body {
-    background-color:#fffcfc !important;
+    background-color: white !important;
     border-style: hidden;
 }
 
@@ -45,4 +45,8 @@ body {
     max-width: 10%;
     border-style: hidden;
     margin: 10%;
+}
+
+.my-dashboard {
+    align-self: center;
 }

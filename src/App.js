@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import AppRouter, { history } from './routers/AppRouter';
 import configureStore from './store/configureStore';
-import { login, logout } from './actions/auth';
+import { login, logout, updateUser } from './actions/auth';
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';
 import 'react-dates/lib/css/_datepicker.css';
@@ -55,16 +55,17 @@ firebase.auth().onAuthStateChanged((user) => {
       provider_id: user.providerId,
       email: user.email
     }
-    database.ref('users').child(fbUser.id).set(fbUser);
+    updateUser(user.id, fbUser)
+    
     store.dispatch(login(user.uid));
     renderApp();
-    if (history.location.pathname === '/') {
-      history.push('/dashboard');
+    if (history.location.pathname === '/welcome') {
+      history.push('/welcome');
     }
   } else {
     store.dispatch(logout());
     renderApp();
-    history.push('/');
+    history.push('/welcome');
   }
 });
 

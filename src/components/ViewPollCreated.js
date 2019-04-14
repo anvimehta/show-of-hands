@@ -14,18 +14,18 @@ class ViewPage extends React.Component {
 	}
 
 	rerenderList (filters) {
-	/*setState({
-		filters
-	})*/
-	//this.props.refresh()
+		this.setState({
+			filters
+		})
+		this.props.refresh()
 	}
 
 	render () {
-	return <div>
-		<PollListFilters onChange={this.rerenderList} />
-		<PollsSummary />
-		<PollList filters={this.state.filters} />
-	</div>
+		return <div>
+			<h3>Your polls</h3>
+			<PollListFilters onChange={this.rerenderList} />
+			<PollList userPolls={true} filters={this.state.filters} />
+		</div>
 	}
 }
 
@@ -33,7 +33,7 @@ class ViewPage extends React.Component {
 const mapDispatchToProps = (dispatch) => {
 	dispatch(listAllPolls())
 	return {
-	refresh: () => dispatch(listAllPolls())
+		refresh: () => dispatch(listAllPolls())
 	}
 };
 

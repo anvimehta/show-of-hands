@@ -6,22 +6,10 @@ import { listAllPolls } from '../actions/polls';
 
 const WelcomePage = (props) => (
 	<div>
-		<div>
-		<button onClick={function(e){
-          e.onClick=window.location.href='/dashboard/polls'
-        }}>
-          View Polls
-        </button>
-		<span>                  </span>
-        <button onClick={function(e){
-          e.onClick=window.location.href='/dashboard/add-poll'
-        }}>
-          Create a Poll
-        </button>
-		</div>
-		<div>
-			<h1>Trending Polls</h1>
-			<TrendingList />
+	<div>
+	<link href="https://fonts.googleapis.com/css?family=font-family: Verdana, Geneva, Tahoma, sans-serif;" rel="stylesheet"/>
+			<h1 className="trending-polls">Trending Polls</h1>
+		<TrendingList />
 	</div>
 	</div>
 )
@@ -30,7 +18,7 @@ const WelcomePage = (props) => (
 const mapDispatchToProps = (dispatch) => {
 	dispatch(listAllPolls())
 	return {
-		refresh: () => dispatch(listAllPolls())
+	refresh: () => dispatch(listAllPolls())
 	}
 };
 
