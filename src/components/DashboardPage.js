@@ -5,7 +5,7 @@ import { startAnswerPoll, startGetPoll } from '../actions/polls';
 import { updateUser, getUser } from '../actions/auth';
 import getPoll from '../selectors/get-poll';
 import PhoneNumber from './PhoneNumber';
-
+import ViewPollsCreated from './ViewPollCreated';
 let UID;
 let user = firebase.auth();
 
@@ -60,6 +60,10 @@ class DashboardPage extends React.Component {
                 />
                 <br/>
                 <button onClick={this.saveProfileData} className="button">Save</button>
+
+                <hr/>
+
+                <ViewPollsCreated />
             </div>
         );
     }
