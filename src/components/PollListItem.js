@@ -63,6 +63,8 @@ class PollListItem extends React.Component {
 				<ul>{choicesList}</ul>
 				<p>Expire{(new Date() >= this.poll.end_date ? 'd' : 's')} on: {moment(new Date(this.poll.end_date)).format("YYYY-MM-DD")}</p>
 				<p>{this.poll.like_count} likes </p>
+				<button type="button" to={`/polls/${this.poll.id}/answer`}>Answer poll</button>
+
 			</div>
 			</Link>
 

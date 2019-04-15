@@ -67,6 +67,7 @@ h1 {
 #poll-card h3 {
     margin-left: 5%;
 }
+
 h1:visited {
     color: #13315b;
     text-decoration: #fffcfc;
@@ -80,6 +81,17 @@ h1:visited {
     font-variant: small-caps;
     font-family: 'PT Sans', sans-serif; 
     color: white;
+    font-weight: 100 !important;
+}
+
+
+.header__title h1:visited {
+    text-align: left;
+    border-style: none !important; 
+    font-variant: small-caps;
+    font-family: 'PT Sans', sans-serif; 
+    color: white;
+    font-weight: 100 !important;
 }
 
 h3 {
