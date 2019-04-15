@@ -12,15 +12,10 @@ let user = firebase.auth();
 
 class DashboardPage extends React.Component {
     constructor (props) {
-<<<<<<< HEAD
         super(props)
         this.saveProfileData = this.saveProfileData.bind(this)
         this.renderSelectedSection = this.renderSelectedSection.bind(this)
         this.selectPollsSection = this.selectPollsSection.bind(this)
-=======
-        super(props);
-        this.saveProfileData = this.saveProfileData.bind(this);
->>>>>>> f27e1561f508ebdc05605cd4f7dcb5a25603ecfd
         this.userData = {
             phone_number: user.phone_number
         }
