@@ -49,10 +49,11 @@ class DashboardPage extends React.Component {
                     alt={user.display_name + "'s profile picture"}
                     width="70"
                     height="70"/>
+                <br/>
                     {user.display_name}'s Dashboard
                 <p>Email:           {user.email}</p>
                 <p>User ID:         {user.id}</p>
-                <p>Phone number:    {user.phoneNumber ? user.phone_number : "None provided"}</p>
+                <p>Phone number:</p>
                 <PhoneNumber
                     phoneNumber={user.phone_number}
                     onChange={this.onUserDataChange.bind(this, "phone_number")}
