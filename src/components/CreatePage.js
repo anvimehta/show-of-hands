@@ -110,21 +110,6 @@ return (
 
 }
 
-	constructor(props) {
-		super(props);
-	}
-	createPoll(poll) {
-		this.props.startAddPoll(poll);
-		this.props.history.push('/welcome');
-	}
-	render() {
-		return (
-			<div className="create-a-poll">
-				<h1>Create a Poll</h1>
-				<CreateForm onSubmit={poll => this.createPoll(poll)}/>
-			</div>
-		);
-	}
 }
 
 const mapDispatchToProps = (dispatch) => ({
