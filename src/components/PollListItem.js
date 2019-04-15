@@ -51,17 +51,15 @@ class PollListItem extends React.Component {
 		}
 		return (
 			<Link className="poll-title" to={`/polls/${this.poll.id}`}>
-			<div id="poll-card">
-				<Link classname="link" to={`/polls/${this.poll.id}`}>
+				<div id="poll-card">
 					<h1>{this.poll.title}</h1>
-				</Link>
 
-				<h3>Category: {this.categories[this.poll.category]}</h3>
-				<p>{this.poll.description}</p>
-				<label>Choices:</label>
-				<ul>{choicesList}</ul>
-				<p>Expire{(new Date() >= this.poll.end_date ? 'd' : 's')} on: {moment(new Date(this.poll.end_date)).format("YYYY-MM-DD")}</p>
-			</div>
+					<h3>Category: {this.categories[this.poll.category]}</h3>
+					<p>{this.poll.description}</p>
+					<label>Choices:</label>
+					<ul>{choicesList}</ul>
+					<p>Expire{(new Date() >= this.poll.end_date ? 'd' : 's')} on: {moment(new Date(this.poll.end_date)).format("YYYY-MM-DD")}</p>
+				</div>
 			</Link>
 
 		);

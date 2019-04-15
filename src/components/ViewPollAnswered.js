@@ -22,7 +22,7 @@ class ViewPage extends React.Component {
 
 	render () {
 		return <div>
-			<h3>Polls Created by You</h3>
+			<h3>Polls Asnwered by You</h3>
 			<PollListFilters onChange={this.rerenderList} />
 			<PollList answeredByUser={true} filters={this.state.filters} />
 		</div>
@@ -38,3 +38,4 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 export default connect(undefined, mapDispatchToProps)(ViewPage);
+
