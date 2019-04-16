@@ -24,11 +24,10 @@ const AppRouter = () => (
         <PublicRoute path="/" component={LoginPage} exact={true} />
         <PrivateRoute path="/welcome" component={WelcomePage} exact={true} />
         <PrivateRoute path="/dashboard" component={DashboardPage} exact={true} />
-        <PrivateRoute path="/polls-created" component={PollsCreatedPage} exact={true} />
         <PrivateRoute path="/polls" component={ViewPage} exact={true} />
         <PrivateRoute path="/add-poll" component={CreatePage} exact={true} />
         <PrivateRoute path="/polls/edit" component={EditPollPage} exact={true} />
-        <PrivateRoute path="/polls/:id" component={ViewPollPage} exact={true} />
+        <PrivateRoute path="/polls/:id/" component={ViewPollPage} exact={true} />
         <PrivateRoute path="/polls/:id/edit" component={EditPollPage} exact={true} />
         <PrivateRoute path="/polls/:id/answer" component={AnswerPollPage} exact={true} />
         <PrivateRoute path="/loading" component={LoadingPage} exact={true} />
