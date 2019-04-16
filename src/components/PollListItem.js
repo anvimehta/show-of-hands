@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PollResults from './PollResults';
 import moment from 'moment';
 import numeral from 'numeral';
 import CATEGORIES from '../util/categories'
@@ -54,14 +55,28 @@ class PollListItem extends React.Component {
 			<Link className="poll-title" to={`/polls/${this.poll.id}`}>
 			 <div id="poll-card">
 					<h1>{this.poll.title}</h1>
-			
+
 
 				<h3>Category: {this.categories[this.poll.category]}</h3>
 				<p>{this.poll.description}</p>
-				<label>Choices:</label>
-				<ul>{choicesList}</ul>
-				<p>Expire{(new Date() >= this.poll.end_date ? 'd' : 's')} on: {moment(new Date(this.poll.end_date)).format("YYYY-MM-DD")}</p>
-				<p className="like">{this.poll.like_count} likes </p>
+				{(new Date() > this.poll.end_date && this.poll.public_results && total_votes > 0) ? (
+					<div>
+					<PollResults poll={this.poll} />
+					</div>
+				) : (new Date() >= this.poll.end_date && this.poll.public_results && total_votes == 0) ? (
+					<div>
+						<p>No responses</p>
+					</div>
+				) : (
+					<div>
+					<label>Choices:</label>
+					<ul>{choicesList}</ul>
+					</div>
+				)}
+				<p>Expire{(new Date() > this.poll.end_date ? 'd' : 's')} on: {moment(new Date(this.poll.end_date)).format("YYYY-MM-DD")}</p>
+				<p>{this.poll.like_count} likes </p>
+				<button type="button" to={`/polls/${this.poll.id}/answer`}>Answer poll</button>
+
 			</div>
 			</Link>
 
