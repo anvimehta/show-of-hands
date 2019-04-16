@@ -32,7 +32,9 @@ class PollList extends React.Component {
 		}
 
 		const pollItems = (
-			props.userPolls ? props.polls.filter(c => c.author === props.uid) : props.polls
+			
+			props.userPolls ? props.polls.filter(c => c.author === props.uid) : 
+			props.answeredByUser ? props.polls.filter(c => (c.responses || {})[props.uid]) : props.polls
 		).map((poll) => {
 			return <PollListItem uid={props.uid} key={poll.id} data={poll} />;
 		});
