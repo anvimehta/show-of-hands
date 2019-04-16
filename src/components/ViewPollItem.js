@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import numeral from 'numeral';
-import PollListItem from './PollListItem';
+import ViewPollListItem from './ViewPollListItem';
 import getPoll from '../selectors/get-poll';
 import { Link } from 'react-router-dom';
 import moment from 'moment';
@@ -58,7 +58,7 @@ export class ViewPollItem extends React.Component {
 
 		return (
 			<div>
-				<PollListItem uid={this.props.uid} data={poll} />
+				<ViewPollListItem uid={this.props.uid} data={poll} />
 				{
 					poll && poll.editable ? <Link to={`/polls/${id}/edit`}>
 						<button className="button">

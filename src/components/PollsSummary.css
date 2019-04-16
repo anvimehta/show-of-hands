@@ -289,7 +289,7 @@ input[type="submit"]:hover {
       text-decoration: none !important;
   }
 
-  ul {
+  #poll-card ul {
     list-style-type: none;
     list-style-position: outside;
   }
@@ -298,3 +298,22 @@ input[type="submit"]:hover {
       content: "     •    " !important;
       color: black !important;
   }
+
+  .view-category {
+      margin-left: 30%;
+      font-weight: 100 !important;
+      font-variant: normal !important;
+  }
+
+  .view-description {
+      margin-left: 30%;
+  }
+
+  .view-choices {
+      margin-left: 30%;
+  }
+
+  .view-ul {
+      margin-left: 40%;
+  }
+  
