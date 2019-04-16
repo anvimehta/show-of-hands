@@ -5050,10 +5050,10 @@ react-moment-proptypes@^1.4.0:
   dependencies:
     moment ">=1.6.0"
 
-react-phone-number-input@^2.3.10:
-  version "2.3.10"
-  resolved "https://registry.yarnpkg.com/react-phone-number-input/-/react-phone-number-input-2.3.10.tgz#020cedbfe918189fa0ba4cdb73cf6b9bd48546cb"
-  integrity sha512-J9TxeNQiHOvkj7d2VfLyArwAuePaiTCx+sdH0GgJtN0RJHjTFlkdFOe3tsR5mS3058ntnauS/cGq1ykaj1Nmow==
+react-phone-number-input@^2.3.11:
+  version "2.3.11"
+  resolved "https://registry.yarnpkg.com/react-phone-number-input/-/react-phone-number-input-2.3.11.tgz#103f6dc4578bdb39128a9ac8df4ae6952c193193"
+  integrity sha512-URiMDE2ucHHM85mP6LioTDTKawtdBAMHkCrSyk3hIDI+dZWM85uhuwuefLQ9la7sQoTGE8ujUVse/yF6n+dL3A==
   dependencies:
     classnames "^2.2.5"
     input-format "^0.2.2"
