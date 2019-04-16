@@ -28,6 +28,8 @@ export default (state = filtersReducerDefaultState, action) => {
     case "DATE_DESC":
     case "NUMBER_OF_RESPONSES_ASC":
     case "NUMBER_OF_RESPONSES_DESC":
+    case "NUMBER_OF_LIKES_ASC":
+    case "NUMBER_OF_LIKES_DESC":
       return Object.assign(state, {
         sortBy: action.type
       });
