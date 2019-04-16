@@ -60,7 +60,7 @@ class ViewPollListItem extends React.Component {
 				<p className="view-description">{this.poll.description}</p>
 				<label className="view-choices">Choices:</label>
 				<ul>{choicesList}</ul>
-				<p>Expire{(new Date() >= this.poll.end_date ? 'd' : 's')} on: {moment(new Date(this.poll.end_date)).format("YYYY-MM-DD")}</p>
+				<p className="view-expiry">Expire{(new Date() >= this.poll.end_date ? 'd' : 's')} on: {moment(new Date(this.poll.end_date)).format("YYYY-MM-DD")}</p>
 				<p className="like">{this.poll.like_count} likes </p>
 			</div>
 			</Link>

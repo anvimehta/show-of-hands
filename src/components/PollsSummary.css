@@ -313,7 +313,50 @@ input[type="submit"]:hover {
       margin-left: 30%;
   }
 
+
+  #poll-cards ul {
+    list-style-type: none;
+    list-style-position: outside;
+  }
   .view-ul {
-      margin-left: 40%;
+      margin-left: 1%;
+  }
+
+  #poll-cards li::before {
+      content: "     •    " !important;
+      color: black !important;
+      margin-left: 31% !important;
   }
   
+  .view-expiry {
+    margin-left: 30%; 
+  }
+
+  #view-edit {
+    display: block; margin: 0 auto;
+    background: #09665f;
+    border-radius: 10%;
+}
+
+#view-edit:hover {
+    background: #074f49;
+}
+#view-answer {
+    margin-left: 1%;
+    background: #09665f;
+    border-radius: 10%;
+}
+
+#view-answer:hover {
+    background: #074f49;
+}
+
+#view-like {
+    margin-left: 1%;
+    background: #09665f;
+    border-radius: 10%;
+}
+
+#view-like:hover {
+    background: #074f49;
+}

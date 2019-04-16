@@ -6,6 +6,7 @@ import { updateUser, getUser } from '../actions/auth';
 import getPoll from '../selectors/get-poll';
 import PhoneNumber from './PhoneNumber';
 import ViewPollsCreated from './ViewPollCreated';
+import ViewPollsAnswered from './ViewPollAnswered';
 
 let UID;
 let user = firebase.auth();
@@ -56,6 +57,9 @@ class DashboardPage extends React.Component {
         return <div>
             <button className={`button ${this.state.selectedPollsSection === this.SECTIONS.CREATED_BY_USER ? "active" : ""}`} data-section={this.SECTIONS.CREATED_BY_USER} onClick={this.selectPollsSection}>
                 Polls Created by Me
+            </button>
+            <button className={`button ${this.state.selectedPollsSection === this.SECTIONS.ANSWERED_BY_USER ? "active" : ""}`} data-section={this.SECTIONS.ANSWERED_BY_USER} onClick={this.selectPollsSection}>
+                Answered by me
             </button>
             {polls}
         </div>
