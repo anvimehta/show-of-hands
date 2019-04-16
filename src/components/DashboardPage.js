@@ -59,7 +59,7 @@ class DashboardPage extends React.Component {
                 Polls Created by Me
             </button>
             <button className={`button ${this.state.selectedPollsSection === this.SECTIONS.ANSWERED_BY_USER ? "active" : ""}`} data-section={this.SECTIONS.ANSWERED_BY_USER} onClick={this.selectPollsSection}>
-                Answered by me
+                Polls Answered by me
             </button>
             {polls}
         </div>
