@@ -28,13 +28,13 @@ class PollList extends React.Component {
 
 		const props = this.props;
 
-		if (!props.polls || props.polls.length === 0) {
+		if (!props.polls || props.polls == undefined || props.polls.length === 0) {
 			return <p>No polls</p>;
 		}
 
 		const pollItems = (
-			
-			props.userPolls ? props.polls.filter(c => c.author === props.uid) : 
+
+			props.userPolls ? props.polls.filter(c => c.author === props.uid) :
 			props.answeredByUser ? props.polls.filter(c => (c.responses || {})[props.uid]) : props.polls
 		).map((poll) => {
 			return <PollListItem uid={props.uid} key={poll.id} data={poll} />;

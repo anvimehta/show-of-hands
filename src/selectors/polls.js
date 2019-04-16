@@ -22,6 +22,7 @@ export default (polls, o) => {
 
   const { category, text, sortBy, startDate, endDate, pollStatus } = o;
 
+  if (!polls.polls) return null;
   return polls.polls.filter((poll) => {
     const createdAtMoment = moment(poll.start_date);
     const startDateMatch = startDate ? startDate.isSameOrBefore(createdAtMoment, 'day') : true;
