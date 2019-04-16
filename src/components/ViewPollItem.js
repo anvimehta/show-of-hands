@@ -1,11 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import numeral from 'numeral';
-import PollListItem from './PollListItem';
+import ViewPollListItem from './ViewPollListItem';
 import getPoll from '../selectors/get-poll';
 import { Link } from 'react-router-dom';
 import moment from 'moment';
 import { startEditPoll } from '../actions/polls';
+
 
 export class ViewPollItem extends React.Component {
 	constructor (props) {
@@ -15,6 +16,7 @@ export class ViewPollItem extends React.Component {
 		this.likePoll = this.likePoll.bind(this)
 		this.unlikePoll = this.unlikePoll.bind(this)
 		this.likeCount = this.likeCount.bind(this)
+		
 
 		this.state = {
 			poll_liked: this.isLikedAlready()
@@ -58,7 +60,7 @@ export class ViewPollItem extends React.Component {
 
 		return (
 			<div>
-				<PollListItem uid={this.props.uid} data={poll} />
+				<ViewPollListItem uid={this.props.uid} data={poll} />
 				{
 					poll && poll.editable ? <Link to={`/polls/${id}/edit`}>
 						<button className="button">

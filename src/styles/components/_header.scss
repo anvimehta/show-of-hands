@@ -44,8 +44,9 @@ h1:link
   font-family: 'PT Sans', sans-serif;
   border: none;
   font-variant: small-caps;
-  text-align: center;
+  text-align: center !important;
   font-size: 40px;
+  font-weight: 200 !important;
 }
 
 
