@@ -9,7 +9,7 @@ export const Header = ({ startLogout }) => (
 		<div className="content-container">
 			<div className="header__content">
 				<Link className="header__title" to="/welcome">
-					<h1>SHOW OF HANDS</h1>
+					<h1>Show Of Hands</h1>
 				</Link>
 				<span>     </span> 
 				<div className="navbar">

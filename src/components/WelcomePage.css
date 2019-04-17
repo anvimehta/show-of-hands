@@ -3,7 +3,7 @@
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-.poll-card ul {
+#poll-card ul {
     list-style-type: none;
     margin-left: 10%;
     padding: 0;
@@ -11,7 +11,7 @@
     list-style: none;
   }
   
-.poll-card ul li::before {
+#poll-card ul li::before {
     content: "\2022";
     color: red;
     font-weight: bold;
@@ -20,13 +20,13 @@
     margin-left: -1em;
 
   }
-  .poll-card li {
+  #poll-card li {
     float: left;
     margin-left: 10%;
     color: black !important;
   }
   
-  .poll-card li a {
+  #poll-card li a {
     color: black !important;
     display: block;
     color: white;
@@ -36,7 +36,7 @@
   }
   
   /* Change the link color to #111 (black) on hover */
-  .poll-card li a:hover {
+  #poll-card li a:hover {
     background-color: #111;
   }
 
@@ -44,6 +44,6 @@
     color: hotpink;
   }
 
-  .poll-card h3 {
+  #poll-card h3 {
     font-variant: none !important;
   }

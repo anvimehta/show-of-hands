@@ -80,18 +80,19 @@ class DashboardPage extends React.Component {
         }
 
         return (
-            <div id="dashboard-div">
+            <div>
 
-                <h1 id="my-dashboard">{user.display_name}'s Dashboard</h1>
-                <hr id="line"/>
+                <h1 id="my-dashboard">My Dashboard</h1>
                     <img
                     src={user.photo_url}
                     alt={user.display_name + "'s profile picture"}
                     width="70"
                     height="70"/>
                 <br/>
+                    {user.display_name}'s Dashboard
                 <p>Email:           {user.email}</p>
-                <p>Phone number:     {user.phone_number}</p>
+                <p>User ID:         {user.id}</p>
+                <p>Phone number:</p>
                 <PhoneNumber
                     phoneNumber={user.phone_number}
                     onChange={this.onUserDataChange.bind(this, "phone_number")}
