@@ -54,7 +54,7 @@ this.setState({
 
 loading: false,
 
-error: "You have to answer some polls. You will be redirected."
+error: "Redirecting..."
 
 })
 
@@ -91,15 +91,15 @@ return <div>Loading...</div>
 }
 
 if (this.state.error) {
+    window.alert('You have to answer more polls to ask questions. You will be redirected.')
 
-return <div className="error-alert">{this.state.error}</div>
-
-}
+    return <div className="error-alert">{this.state.error}</div>
+    
+    }
 
 return (
 
 <div className="create-a-poll">
-
 <h1>Create a Poll</h1>
 
 <CreateForm onSubmit={poll => this.createPoll(poll)}/>

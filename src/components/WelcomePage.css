@@ -43,3 +43,7 @@
   #link {
     color: hotpink;
   }
+
+  #poll-card h3 {
+    font-variant: none !important;
+  }

@@ -20,6 +20,7 @@ export class ViewPollItem extends React.Component {
 			poll_liked: this.isLikedAlready()
 		}
 	}
+
 	likeCount () {
 		return Object.keys(this.props.poll.likes || {}).length
 	}
@@ -57,29 +58,28 @@ export class ViewPollItem extends React.Component {
 		} = poll;
 
 		return (
-			<div>
+			<div id="view-poll-item">
 				<ViewPollListItem uid={this.props.uid} data={poll} />
 				{
-					poll && poll.editable ? <Link to={`/polls/${id}/edit`}>
+					poll && poll.editable ? <div> <Link to={`/polls/${id}/edit`}>
 						<button className="button" id="view-edit">
 							Edit
 						</button>
-					</Link> : null
-				}
-				{ " " }
-				<div>
-				<Link to={`/polls/${id}/answer`}>
+					</Link> <Link to={`/polls/${id}/answer`}>
 					<button className="button" id="view-answer">
 						Answer
 					</button>
-				</Link>
-				{ " " }
-				<button className="button" onClick={this.toggleLikePoll} id="view-like">
+				</Link> <button className="button" onClick={this.toggleLikePoll} id="view-like">
 					{ this.isLikedAlready() ? "Unlike" : "Like" }<br/>
-				</button>
-				<p id="p">Share this link: localhost:8080/polls/{id}</p>
-				{ " " }
-				</div>
+				</button></div>: <div><Link to={`/polls/${id}/answer`}>
+					<button className="button" id="view-answer-first">
+						Answer
+					</button>
+				</Link><button className="button" onClick={this.toggleLikePoll} id="view-like">
+					{ this.isLikedAlready() ? "Unlike" : "Like" }<br/>
+				</button></div>
+				}
+				<p className="p">Share this link: localhost:8080/polls/{id}</p>
 			</div>
 		);
 	}
