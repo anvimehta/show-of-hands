@@ -15,6 +15,7 @@ body
 }
 
 .header__title {
+  font-weight: bold;
   color: black !important;
   text-decoration: none;
   h1 {
@@ -37,6 +38,10 @@ h1:link
   font-variant: small-caps;
 }
 
+.poll-title {
+  height: 100px !important;
+}
+
 .poll-title h1:visited {
   text-decoration-color: aqua !important;
 }
@@ -46,7 +51,7 @@ h1:link
   text-align: center !important;
   font-size: 40px;
   font-variant: normal !important;
-  font-weight: bold !important;
+  font-weight: bolder !important;
 }
 
 .viewing-polls {
@@ -87,3 +92,9 @@ li a:hover
   cursor: pointer;
   color: #d2d4d8;
 }
+
+.poll-title div {
+  width: 48%;
+  margin-left: 1%;
+}
+

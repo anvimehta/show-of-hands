@@ -53,7 +53,7 @@ class PollListItem extends React.Component {
 
 		return (
 			<Link className="poll-title" to={`/polls/${this.poll.id}`}>
-			 <div id="poll-card">
+			 <div className="poll-card">
 					<h1>{this.poll.title}</h1>
 
 
