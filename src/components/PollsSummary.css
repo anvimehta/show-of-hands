@@ -37,18 +37,7 @@ div #poll-card {
 p {
     font-family: 'PT Sans', sans-serif !important;
 }
-  
-h1 {
-    position: relative;
-    border-style: double;
-    border-left-width: 0.5em;
-    margin: 50%;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: #13315b;
-    text-decoration: #fffcfc;
-    text-decoration-line: #fffcfc;
-    border-color: transparent;
-}
+
 
 #poll-card h1 {
     font-variant: normal;
@@ -97,7 +86,6 @@ h1:visited {
 h3 {
     color: black !important;
     font-family: 'PT Sans', sans-serif;
-    font-variant: small-caps;
     border-style: dotted;
     border-color: transparent;
 }
@@ -333,15 +321,20 @@ input[type="submit"]:hover {
   }
 
   #view-edit {
-    display: block; margin: 0 auto;
+    display: inline-block; 
     background: #09665f;
     border-radius: 10%;
+    text-align: center;
+    align-self: center;
+    align-items: center;
+    margin-left: 40%;
 }
 
 #view-edit:hover {
     background: #074f49;
 }
 #view-answer {
+    display: inline-block;
     margin-left: 1%;
     background: #09665f;
     border-radius: 10%;
@@ -351,7 +344,23 @@ input[type="submit"]:hover {
     background: #074f49;
 }
 
+#view-answer-first {
+    display: inline-block; 
+    background: #09665f;
+    border-radius: 10%;
+    text-align: center;
+    align-self: center;
+    align-items: center;
+    margin-left: 45%;
+}
+
+#view-answer-first:hover {
+    background: #074f49;
+   
+}
+
 #view-like {
+    display: inline-block;
     margin-left: 1%;
     background: #09665f;
     border-radius: 10%;
@@ -360,3 +369,42 @@ input[type="submit"]:hover {
 #view-like:hover {
     background: #074f49;
 }
+
+#likes {
+    font-variant: small-caps;
+    text-align: right;
+    margin-right: 5%;
+    font-size: 25px;
+}
+
+.view-like {
+    text-align: right;
+    text-align: center !important;
+    font-variant: small-caps;
+    font-size: 30px;
+}
+
+#view-poll-item {
+    align-content: center;
+    align-self: center;
+}
+
+#overlay {
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0; 
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+  }
+
+  .p {
+      margin-top: 2%;
+      text-align: center !important;
+  }
+  
