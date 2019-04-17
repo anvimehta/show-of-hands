@@ -16,9 +16,7 @@ export const PollsSummary = ({ pollCount, pollsTotal }) => {
 };
 
 const mapStateToProps = (state) => {
-
 	const visiblePolls = selectPolls(state.polls, state.filters);
-
 	return {
     	pollCount: visiblePolls ? visiblePolls.length : 0,
     	pollsTotal: selectPollsTotal(visiblePolls)
