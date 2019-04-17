@@ -150,6 +150,7 @@ class CreateForm extends React.Component {
 			end_date: this.state.end_date,
 			public_results: this.state.public_results,
 			responders: [],
+			user_id:0
 		});
 	}
 	render() {
