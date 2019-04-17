@@ -29,18 +29,14 @@ class PollListItem extends React.Component {
 		//.	 |yes		|no	 |
 		//.	DISPLAY.	 +----- DO NOT DISPLAY
 		//.	RESULTS.			THE RESULTS
-
-
-
 		const choicesList = (this.poll.choices || []).map((choice, index) =>
 			<li key={index}>
 				<ChoiceListItem
 					text={choice.text}
 					votes={choice.votes}
 					isVisible={
-						this.props.uid === this.poll.author || (
-							this.poll.public_results && Object(this.poll.responses)[this.props.uid]
-						)
+						this.props.uid === this.poll.author ||
+						(this.poll.public_results && Object(this.poll.responses)[this.props.uid])
 					}
 				/>
 			</li>
@@ -53,30 +49,30 @@ class PollListItem extends React.Component {
 
 		return (
 			<Link className="poll-title" to={`/polls/${this.poll.id}`}>
-			 <div id="poll-card">
-					<h1>{this.poll.title}</h1>
+				<div id="poll-card">
+						<h1>{this.poll.title}</h1>
 
 
-				<h3>Category: {this.categories[this.poll.category]}</h3>
-				<p>{this.poll.description}</p>
-				{(new Date() > this.poll.end_date && this.poll.public_results && total_votes > 0) ? (
-					<div>
-					<PollResults poll={this.poll} />
-					</div>
-				) : (new Date() >= this.poll.end_date && this.poll.public_results && total_votes == 0) ? (
-					<div>
-						<p>No responses</p>
-					</div>
-				) : (
-					<div>
-					<label>Choices:</label>
-					<ul>{choicesList}</ul>
-					</div>
-				)}
-				<p>Expire{(new Date() > this.poll.end_date ? 'd' : 's')} on: {moment(new Date(this.poll.end_date)).format("YYYY-MM-DD")}</p>
-				<p>{this.poll.like_count} likes </p>
+					<h3>Category: {this.categories[this.poll.category]}</h3>
+					<p>{this.poll.description}</p>
+					{(new Date() > this.poll.end_date && this.poll.public_results && total_votes > 0) ? (
+						<div>
+							<PollResults poll={this.poll} />
+						</div>
+					) : (new Date() >= this.poll.end_date && this.poll.public_results && total_votes == 0) ? (
+						<div>
+							<p>No responses</p>
+						</div>
+					) : (
+						<div>
+							<label>Choices:</label>
+							<ul>{choicesList}</ul>
+						</div>
+					)}
+					<p>Expire{(new Date() > this.poll.end_date ? 'd' : 's')} on: {moment(new Date(this.poll.end_date)).format("YYYY-MM-DD")}</p>
+					<p>{this.poll.like_count} likes </p>
 
-			</div>
+				</div>
 			</Link>
 
 		);
