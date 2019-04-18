@@ -61,23 +61,35 @@ export class ViewPollItem extends React.Component {
 			<div id="view-poll-item">
 				<ViewPollListItem uid={this.props.uid} data={poll} />
 				{
-					poll && poll.editable ? <div> <Link to={`/polls/${id}/edit`}>
-						<button className="button" id="view-edit">
-							Edit
-						</button>
-					</Link> <Link to={`/polls/${id}/answer`}>
-					<button className="button" id="view-answer">
-						Answer
-					</button>
-				</Link> <button className="button" onClick={this.toggleLikePoll} id="view-like">
-					{ this.isLikedAlready() ? "Unlike" : "Like" }<br/>
-				</button></div>: <div><Link to={`/polls/${id}/answer`}>
-					<button className="button" id="view-answer-first">
-						Answer
-					</button>
-				</Link><button className="button" onClick={this.toggleLikePoll} id="view-like">
-					{ this.isLikedAlready() ? "Unlike" : "Like" }<br/>
-				</button></div>
+					poll && poll.editable ? <div>
+						<Link to={`/polls/${id}/edit`}>
+							<button className="button" id="view-edit">
+								Edit
+							</button>
+						</Link>
+						{ !poll.is_expired ? <span>
+								<Link to={`/polls/${id}/answer`}>
+									<button className="button" id="view-answer">
+										Answer
+									</button>
+								</Link>
+								<button className="button" onClick={this.toggleLikePoll} id="view-like">
+									{ this.isLikedAlready() ? "Unlike" : "Like" }<br/>
+								</button> 
+							</span> : null
+						}
+					</div> : <div>
+						{ !poll.is_expired ? <span>
+							<Link to={`/polls/${id}/answer`}>
+								<button className="button" id="view-answer-first">
+									Answer
+								</button>
+							</Link>
+							<button className="button" onClick={this.toggleLikePoll} id="view-like">
+								{ this.isLikedAlready() ? "Unlike" : "Like" }<br/>
+							</button>
+						</span> : null }
+					</div>
 				}
 				<p className="p">Share this link: localhost:8080/polls/{id}</p>
 			</div>

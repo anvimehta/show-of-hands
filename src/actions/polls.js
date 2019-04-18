@@ -65,10 +65,11 @@ export const startGetPoll = (pollData = {}) => {
       const poll = ref.val()
       poll.id = ref.key
       poll.editable = (poll.author === getState().auth.uid)
-        if (pollData.edit && !poll.editable || isExpired(poll)) {
+        if (pollData.edit && !poll.editable) {
         window.location = "/polls"
-        return;
+        return
       }
+      poll.is_expired = isExpired(poll)
       poll.like_count = likeCount(poll)
       poll.response_count = countResponses(poll)
       dispatch(getPoll(poll));
@@ -79,7 +80,6 @@ export const startGetPoll = (pollData = {}) => {
 export const startAnswerPoll = (id, answerIndex, userId, newVotesCount) => {
   return (dispatch) => {
     const pollRef = database.ref('polls').child(id);
-
 
     Promise.all([
       pollRef.child("choices").child(answerIndex).child("votes").set(newVotesCount),
