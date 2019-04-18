@@ -7,34 +7,33 @@ import { listAllPolls } from '../actions/polls';
 
 class ViewPage extends React.Component {
 
-        constructor(props) {
-            super(props);
-            this.state = {
-                filters: {}
-            };
-            this.rerenderList = this.rerenderList.bind(this);
-        }
+	constructor (props) {
+	super(props);
+	this.state = { filters: {} }
+	this.rerenderList = this.rerenderList.bind(this)
+	}
 
-        rerenderList(filters) {
-            this.setState({
-                filters
-            });
-            this.props.refresh();
-        }
+	rerenderList (filters) {
+		this.setState({
+			filters
+		})
+		this.props.refresh()
+	}
+
 	render () {
 		return <div>
 			<h3>Polls Answered by Me</h3>
 			<PollList answeredByUser={true} filters={this.state.filters} />
-		</div>;
+		</div>
 	}
 }
 
 
 const mapDispatchToProps = (dispatch) => {
-	dispatch(listAllPolls());
+	dispatch(listAllPolls())
 	return {
 		refresh: () => dispatch(listAllPolls())
-	};
+	}
 };
 
-export default connect(undefined, mapDispatchToProps)(ViewPage);
+export default connect(undefined, mapDispatchToProps)(ViewPage); 

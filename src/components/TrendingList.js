@@ -47,25 +47,27 @@ class TrendingList extends React.Component {
 
 	render () {
 		const polls = this.props.polls;
-		if (!polls || !polls.length) {
-			return <p>No polls</p>;
-		}
+	if (!polls || !polls.length) {
+		return <p>No polls</p>;
+	}
 
-			// Get first 4 trending polls
-		const trendingPolls = this.sortByTrending(polls).slice(0, 4);
-		const trendingPollItems = trendingPolls.map((poll) => {
-			return <PollListItem uid={this.props.uid} key={poll.id} data={poll} />;
-		})
+		// Get first 4 trending polls
+	const trendingPolls = this.sortByTrending(polls).slice(0, 4);
+	const trendingPollItems = trendingPolls.map((poll) => {
+		return <PollListItem uid={this.props.uid} key={poll.id} data={poll} />;
+	})
 
-		return <div>{trendingPollItems}</div>;
+	return <div>
+		{trendingPollItems}
+	</div>
 	}
 }
 
 const mapStateToProps = (state) => {
 	const polls = selectPolls(state.polls, state.filters)
 	return {
-		polls,
-		uid: state.auth.uid
+	polls,
+	uid: state.auth.uid
 	};
 };
 

@@ -8,16 +8,16 @@ import { listAllPolls } from '../actions/polls';
 class ViewPage extends React.Component {
 
 	constructor (props) {
-		super(props);
-		this.state = { filters: {} };
-		this.rerenderList = this.rerenderList.bind(this);
+	super(props);
+	this.state = { filters: {} }
+	this.rerenderList = this.rerenderList.bind(this)
 	}
 
 	rerenderList (filters) {
 		this.setState({
 			filters
-		});
-		this.props.refresh();
+		})
+		this.props.refresh()
 	}
 
 	render () {
@@ -25,16 +25,16 @@ class ViewPage extends React.Component {
 			<h3>Polls Created by Me</h3>
 			<PollListFilters onChange={this.rerenderList} />
 			<PollList userPolls={true} filters={this.state.filters} />
-		</div>;
+		</div>
 	}
 }
 
 
 const mapDispatchToProps = (dispatch) => {
-	dispatch(listAllPolls());
+	dispatch(listAllPolls())
 	return {
 		refresh: () => dispatch(listAllPolls())
-	};
+	}
 };
 
 export default connect(undefined, mapDispatchToProps)(ViewPage);
