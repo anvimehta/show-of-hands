@@ -16,8 +16,6 @@ class PollResults extends React.Component {
         return (
             <div>
                 <Chart
-                    width={300}
-                    height={300}
                     chartType="PieChart"
                     loader={<div>Loading Chart</div>}
                     data={pollChartData}
