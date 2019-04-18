@@ -9,6 +9,11 @@
   line-height: 1;
   padding: $s-size;
   text-decoration: none;
+
+  align-content: center !important;
+  align-self: center !important;
+  align-items: center !important;
+  box-align: center !important;
 }
 
 .button--link {

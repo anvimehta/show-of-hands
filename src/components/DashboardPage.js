@@ -55,10 +55,10 @@ class DashboardPage extends React.Component {
         }
 
         return <div>
-            <button className={`button ${this.state.selectedPollsSection === this.SECTIONS.CREATED_BY_USER ? "active" : ""}`} data-section={this.SECTIONS.CREATED_BY_USER} onClick={this.selectPollsSection}>
+            <button id="created-by-me" className={`button ${this.state.selectedPollsSection === this.SECTIONS.CREATED_BY_USER ? "active" : ""}`} data-section={this.SECTIONS.CREATED_BY_USER} onClick={this.selectPollsSection}>
                 Polls Created by Me
             </button>
-            <button className={`button ${this.state.selectedPollsSection === this.SECTIONS.ANSWERED_BY_USER ? "active" : ""}`} data-section={this.SECTIONS.ANSWERED_BY_USER} onClick={this.selectPollsSection}>
+            <button id="answered-by-me" className={`button ${this.state.selectedPollsSection === this.SECTIONS.ANSWERED_BY_USER ? "active" : ""}`} data-section={this.SECTIONS.ANSWERED_BY_USER} onClick={this.selectPollsSection}>
                 Polls Answered by me
             </button>
             {polls}
@@ -92,13 +92,12 @@ class DashboardPage extends React.Component {
                 <br/>
                 <p className="d-email">Email:           {user.email}</p>
                 <p className="d-phone-number">Phone number: {user.phone_number}</p>
-                <p class-name="d-change-number">Update your phone number: </p>
+                <div className="number">
                 <PhoneNumber className="phone-number"
                     phoneNumber={user.phone_number}
                     onChange={this.onUserDataChange.bind(this, "phone_number")}
-                />
-                <br/>
-                <button onClick={this.saveProfileData} className="button">Save</button>
+                /> </div>
+                <button onClick={this.saveProfileData} id="save-button" className="button">Save</button>
                                   <br /><br />
                 {this.renderSelectedSection()}
             </div>

@@ -9,7 +9,7 @@
     box-pack: inherit;  
     border: 1px;
     box-sizing: content-box;
-    background-color: #f2f9f9 !important;
+    background-color: white !important;
     margin: 1%;
     display: inline-block;
 
@@ -437,3 +437,33 @@ input[type="submit"]:hover {
       width: 40% !important;
   }
 
+  input[type="tel"] {
+      width: 100% !important;
+      margin-left: 40% !important;
+      margin-right: 40%;
+      display: inline-block !important;
+}
+.react-phone-number-input__icon {
+    height: 0%;
+    width: 0%;
+}
+.button {
+    display: inline-block;
+}
+
+#created-by-me {
+    background: #09665f !important;
+}
+
+
+#created-by-me.active {
+    background: #074f49 !important;  
+}
+
+#answered-by-me {
+    background: #09665f !important;
+}
+
+#amswered-by-me.active {
+    background: #074f49 !important;  
+}
