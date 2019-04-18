@@ -175,7 +175,7 @@ const pollTwo = store.dispatch(addPoll({ description: 'Coffee', amount: 300, cre
 // store.dispatch(setTextFilter());
 
 store.dispatch(sortByAmount());
-// store.dispatch(sortByDate());
+store.dispatch(sortByDate());
 
 // store.dispatch(setStartDate(0)); // startDate 125
 // store.dispatch(setStartDate()); // startDate undefined

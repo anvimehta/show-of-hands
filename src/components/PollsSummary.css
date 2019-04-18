@@ -147,7 +147,7 @@ input[type="text"]:focus{
 
 .create-a-poll h1 {
     text-align: center;
-    font-weight: normal;
+    font-weight: bold;
     font-variant: normal !important;
 }
 
@@ -217,16 +217,15 @@ input[type="submit"] {
     border: 1px solid transparent;
     border-radius: 4px;
     box-sizing: border-box;
-    outline-color: #505050;
     outline-width: 1px;
-    background-color: #2b2d30;
+    background: #09665f;    
     margin-left: 10% !important;
     color: white;
 }
 
 input[type="submit"]:hover {
     cursor: pointer;
-    background-color: #4b4d51;
+    background: #074f49;
 }
 
 .viewing-polls h1 {
@@ -239,7 +238,7 @@ input[type="submit"]:hover {
 
 .filters span {
     margin-left: 10% !important;
-    font-variant: small-caps;
+    font-variant: normal;
     font-size: 30px;
 }
 .filters label {

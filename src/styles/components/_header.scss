@@ -54,9 +54,12 @@ h1:link
   text-align: center !important;
   font-size: 20px !important;
   font-variant: normal !important;
-  font-weight: bold !important;
+  font-weight: normal !important;
 }
 
+.poll-title h3 {
+  border: none !important;
+}
 
  .navbar ul {
   list-style-type: none;
