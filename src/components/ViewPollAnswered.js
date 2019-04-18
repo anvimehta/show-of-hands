@@ -23,6 +23,7 @@ class ViewPage extends React.Component {
 	render () {
 		return <div>
 			<h3>Polls Answered by Me</h3>
+			<PollListFilters onChange={this.rerenderList} />
 			<PollList answeredByUser={true} filters={this.state.filters} />
 		</div>
 	}
