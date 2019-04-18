@@ -1,77 +1,43 @@
 import React from 'react';
-
 import { connect } from 'react-redux';
-
 import CreateForm from './CreateForm.js';
-
 import { listAllPolls, startAddPoll } from '../actions/polls';
 
 class CreatePage extends React.Component {
 
 constructor(props) {
-
-super(props);
-
-this.state = { loading: true }
-
+    super(props);
+    this.state = { loading: true }
 }
 
 componentDidMount () {
-
-listAllPolls()(data => {
-
-const createdPollsCount = data.polls.reduce((acc, c) => {
-
-if (c.author === this.props.uid) {
-
-return acc + 1
-
-}
-
-return acc;
-
-}, 0)
-
-const answeredPollsCount = data.polls.reduce((acc, c) => {
-
-if (c.responses && c.responses[this.props.uid]) {
-
-return acc + 1
-
-}
-
-return acc;
-
-}, 0)
-
-const ratio = answeredPollsCount / createdPollsCount
-
-console.log(ratio)
-
-if (data.polls.length > 5 && ratio < 0.5) {
-
-this.setState({
-
-loading: false,
-
-error: "Redirecting..."
-
-})
-
-setTimeout(function () {
-
-window.location = "/welcome"
-
-}, 2000)
-
-} else {
-
-this.setState({ loading: false })
-
-}
-
-})
-
+    listAllPolls()(data => {
+        const createdPollsCount = data.polls.reduce((acc, c) => {
+        if (c.author === this.props.uid) {
+            return acc + 1;
+        }
+        return acc;
+        }, 0);
+        const answeredPollsCount = data.polls.reduce((acc, c) => {
+            if (c.responses && c.responses[this.props.uid]) {
+                return acc + 1
+            }
+            return acc;
+        }, 0);
+        const ratio = answeredPollsCount / createdPollsCount;
+        console.log(ratio);
+        if (data.polls.length > 5 && ratio < 0.5) {
+            this.setState({
+                loading: false,
+                error: "Redirecting..."
+            });
+            setTimeout(function () {
+                window.location = "/welcome"
+            }, 2000);
+        } else {
+            this.setState({ loading: false });
+        }
+    });
 }
 
 createPoll(poll) {
@@ -94,7 +60,7 @@ if (this.state.error) {
     window.alert('You have to answer more polls to ask questions. You will be redirected.')
 
     return <div className="error-alert">{this.state.error}</div>
-    
+
     }
 
 return (
@@ -113,19 +79,11 @@ return (
 }
 
 const mapDispatchToProps = (dispatch) => ({
-
-startAddPoll: (poll) => dispatch(startAddPoll(poll))
-
+    startAddPoll: (poll) => dispatch(startAddPoll(poll))
 });
 
 const mapStateToProps = (state) => {
-
-return {
-
-uid: state.auth.uid
-
-};
-
+    return { uid: state.auth.uid };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(CreatePage);

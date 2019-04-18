@@ -13,7 +13,6 @@ class PollResults extends React.Component {
         pollChartData.unshift(['Choice', 'Votes']);
         let pollChartOptions = { title: 'Results' };
 
-
         return (
             <div>
                 <Chart
