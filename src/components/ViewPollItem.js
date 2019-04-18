@@ -6,6 +6,8 @@ import getPoll from '../selectors/get-poll';
 import { Link } from 'react-router-dom';
 import moment from 'moment';
 import { startEditPoll } from '../actions/polls';
+import ReactDOM from 'react-dom';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 export class ViewPollItem extends React.Component {
 	constructor (props) {
@@ -17,8 +19,11 @@ export class ViewPollItem extends React.Component {
 		this.likeCount = this.likeCount.bind(this)
 
 		this.state = {
-			poll_liked: this.isLikedAlready()
-		}
+			poll_liked: this.isLikedAlready(),
+			value: 'localhost:8080/polls/'+this.props.poll.id,
+      copied: false,
+		};
+
 	}
 
 	likeCount () {
@@ -31,6 +36,7 @@ export class ViewPollItem extends React.Component {
 		startEditPoll(this.props.poll.id, {
 			likes: this.props.poll.likes
 		})(function () {})
+
 	}
 	likePoll () {
 		this.props.poll.likes = Object(this.props.poll.likes)
@@ -56,6 +62,7 @@ export class ViewPollItem extends React.Component {
 		const {
 			id, numberOfOptions, createdAt, description
 		} = poll;
+		this.state.value='localhost:8080/polls/'+poll.id
 
 		return (
 			<div id="view-poll-item">
@@ -69,18 +76,25 @@ export class ViewPollItem extends React.Component {
 					<button className="button" id="view-answer">
 						Answer
 					</button>
-				</Link> <button className="button" onClick={this.toggleLikePoll} id="view-like">
+				</Link>
+
+				<button className="button" onClick={this.toggleLikePoll} id="view-like">
 					{ this.isLikedAlready() ? "Unlike" : "Like" }<br/>
-				</button></div>: <div><Link to={`/polls/${id}/answer`}>
-					<button className="button" id="view-answer-first">
-						Answer
+				</button>
+				{ " " }
+				</div>
+
+        <CopyToClipboard text={this.state.value}
+          onCopy={() => this.setState({copied: true})}>
+          <button className="button" id="share-poll">
+					  Share This Poll
 					</button>
-				</Link><button className="button" onClick={this.toggleLikePoll} id="view-like">
-					{ this.isLikedAlready() ? "Unlike" : "Like" }<br/>
-				</button></div>
-				}
-				<p className="p">Share this link: localhost:8080/polls/{id}</p>
+        </CopyToClipboard>
+        {this.state.copied ? <span style={{color: 'red'}}>Copied.</span> : null}
+				{ " " }
 			</div>
+
+
 		);
 	}
 }
@@ -89,5 +103,6 @@ const mapStateToProps = (state) => {
 	const poll = getPoll(state.poll);
 	return { poll, uid: state.auth.uid };
 };
+
 
 export default connect(mapStateToProps)(ViewPollItem);
