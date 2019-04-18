@@ -38,7 +38,7 @@ class PollList extends React.Component {
 			props.answeredByUser ? props.polls.filter(c => (c.responses || {})[props.uid]) : props.polls
 		).map((poll) => {
 			return <PollListItem uid={props.uid} key={poll.id} data={poll} />;
-		});
+		})
 
 		return <div className="poll-list">{pollItems}</div>;
 	}

@@ -57,24 +57,36 @@ class PollListItem extends React.Component {
 					<h1>{this.poll.title}</h1>
 
 
-				<h3>Category: {this.categories[this.poll.category]}</h3>
-				<p>{this.poll.description}</p>
-				{(new Date() > this.poll.end_date && this.poll.public_results && total_votes > 0) ? (
-					<div>
-					<PollResults poll={this.poll} />
+					<h3>Category: {this.categories[this.poll.category]}</h3>
+					<p>{this.poll.description}</p>
+
+					<div className="inline">
+						<div>
+							{(this.poll.public_results && total_votes > 0) ? (
+								<div>
+									<PollResults poll={this.poll} />
+								</div>
+							) : (
+								<div>
+									<p>No responses</p>
+								</div>
+							)}
+						</div>
+
+						<div>
+							{(this.poll.public_results) ? (
+								<div>
+									<label>Choices:</label>
+									<ul>{choicesList}</ul>
+								</div>
+							) : (
+								<div><p>Private Results</p></div>
+							)}
+						</div>
 					</div>
-				) : (new Date() >= this.poll.end_date && this.poll.public_results && total_votes == 0) ? (
-					<div>
-						<p>No responses</p>
-					</div>
-				) : (
-					<div>
-					<label>Choices:</label>
-					<ul>{choicesList}</ul>
-					</div>
-				)}
-				<p>Expire{(new Date() > this.poll.end_date ? 'd' : 's')} on: {moment(new Date(this.poll.end_date)).format("YYYY-MM-DD")}</p>
-				<p id="likes">{this.poll.like_count} likes </p>
+
+					<p>Expire{(new Date() > this.poll.end_date ? 'd' : 's')} on: {moment(new Date(this.poll.end_date)).format("YYYY-MM-DD")}</p>
+					<p>{this.poll.like_count} likes </p>
 
 			</div>
 			</Link>
