@@ -6,6 +6,8 @@ import getPoll from '../selectors/get-poll';
 import { Link } from 'react-router-dom';
 import moment from 'moment';
 import { startEditPoll } from '../actions/polls';
+import ReactDOM from 'react-dom';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 export class ViewPollItem extends React.Component {
 	constructor (props) {
@@ -17,8 +19,11 @@ export class ViewPollItem extends React.Component {
 		this.likeCount = this.likeCount.bind(this)
 
 		this.state = {
-			poll_liked: this.isLikedAlready()
-		}
+			poll_liked: this.isLikedAlready(),
+			value: 'localhost:8080/polls/'+this.props.poll.id,
+      copied: false,
+		};
+
 	}
 	likeCount () {
 		return Object.keys(this.props.poll.likes || {}).length
@@ -30,6 +35,7 @@ export class ViewPollItem extends React.Component {
 		startEditPoll(this.props.poll.id, {
 			likes: this.props.poll.likes
 		})(function () {})
+
 	}
 	likePoll () {
 		this.props.poll.likes = Object(this.props.poll.likes)
@@ -55,6 +61,7 @@ export class ViewPollItem extends React.Component {
 		const {
 			id, numberOfOptions, createdAt, description
 		} = poll;
+		this.state.value='localhost:8080/polls/'+poll.id
 
 		return (
 			<div>
@@ -77,10 +84,21 @@ export class ViewPollItem extends React.Component {
 				<button className="button" onClick={this.toggleLikePoll} id="view-like">
 					{ this.isLikedAlready() ? "Unlike" : "Like" }<br/>
 				</button>
-				<p id="p">Share this link: localhost:8080/polls/{id}</p>
 				{ " " }
 				</div>
+
+				<input value={this.state.value}
+          onChange={({target: {value}}) => this.setState({value, copied: false})} />
+
+        <CopyToClipboard text={this.state.value}
+          onCopy={() => this.setState({copied: true})}>
+          <button>Share This </button>
+        </CopyToClipboard>
+
+        {this.state.copied ? <span style={{color: 'red'}}>Copied.</span> : null}
 			</div>
+
+
 		);
 	}
 }
@@ -89,5 +107,6 @@ const mapStateToProps = (state) => {
 	const poll = getPoll(state.poll);
 	return { poll, uid: state.auth.uid };
 };
+
 
 export default connect(mapStateToProps)(ViewPollItem);
