@@ -25,7 +25,6 @@ export class ViewPollItem extends React.Component {
 		};
 
 	}
-
 	likeCount () {
 		return Object.keys(this.props.poll.likes || {}).length
 	}
@@ -65,14 +64,18 @@ export class ViewPollItem extends React.Component {
 		this.state.value='localhost:8080/polls/'+poll.id
 
 		return (
-			<div id="view-poll-item">
+			<div>
 				<ViewPollListItem uid={this.props.uid} data={poll} />
 				{
-					poll && poll.editable ? <div> <Link to={`/polls/${id}/edit`}>
+					poll && poll.editable ? <Link to={`/polls/${id}/edit`}>
 						<button className="button" id="view-edit">
 							Edit
 						</button>
-					</Link> <Link to={`/polls/${id}/answer`}>
+					</Link> : null
+				}
+				{ " " }
+				<div>
+				<Link to={`/polls/${id}/answer`}>
 					<button className="button" id="view-answer">
 						Answer
 					</button>
