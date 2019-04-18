@@ -35,7 +35,7 @@ div #poll-card {
   }
 
 p {
-    font-family: 'Slabo 27px', serif;: 'PT Sans', sans-serif !important;
+    font-family: 'PT Sans', sans-serif !important;
 }
 
 
@@ -45,7 +45,7 @@ p {
     font-weight: 500;
     text-decoration: none !important;
     text-decoration-line: none !important;
-    font-family: 'Slabo 27px', serif;: 'PT Sans', sans-serif; 
+    font-family: 'PT Sans', sans-serif; 
     text-align: center;
 }
 
@@ -68,7 +68,7 @@ h1:visited {
     text-align: left;
     border-style: none !important; 
     font-variant: small-caps;
-    font-family: 'Slabo 27px', serif;: 'PT Sans', sans-serif; 
+    font-family: 'PT Sans', sans-serif; 
     color: white;
     font-weight: 100 !important;
 }
@@ -78,27 +78,27 @@ h1:visited {
     text-align: left;
     border-style: none !important; 
     font-variant: small-caps;
-    font-family: 'Slabo 27px', serif;: 'PT Sans', sans-serif; 
+    font-family: 'PT Sans', sans-serif; 
     color: white;
     font-weight: 100 !important;
 }
 
 h3 {
     color: black !important;
-    font-family: 'Slabo 27px', serif;: 'PT Sans', sans-serif;
+    font-family: 'PT Sans', sans-serif;
     border-style: dotted;
     border-color: transparent;
 }
 
 p {
-    font-family: 'Slabo 27px', serif;: 'PT Sans', sans-serif ;
+    font-family: 'PT Sans', sans-serif ;
     margin-left: 1%;
     color: black !important;
 }
 
 label {
     color: black !important;
-    font-family: 'Slabo 27px', serif;: 'PT Sans', sans-serif;
+    font-family: 'PT Sans', sans-serif;
     margin-left: 5%;
 }
 
@@ -107,7 +107,7 @@ label {
 }
 
 span {
-    font-family: 'Slabo 27px', serif;: 'PT Sans', sans-serif ;
+    font-family: 'PT Sans', sans-serif ;
     color: black !important;
 }
 
@@ -263,7 +263,7 @@ input[type="submit"]:hover {
 .DateRangePicker {
     border: none;
     border-color: transparent;
-    font-family: 'Slabo 27px', serif;: 'Arial';
+    font-family: 'Arial';
     width: 50%;
     margin-left: 10%;
     display: inline-block !important;
