@@ -52,9 +52,8 @@ class PollListItem extends React.Component {
 				<div id="poll-card">
 						<h1>{this.poll.title}</h1>
 
-
-				<h3>Category: {this.categories[this.poll.category]}</h3>
 				<p>{this.poll.description}</p>
+				<h3>Category: {this.categories[this.poll.category]}</h3>
 				{(new Date() > this.poll.end_date && this.poll.public_results && total_votes > 0) ? (
 					<div>
 					<PollResults poll={this.poll} />

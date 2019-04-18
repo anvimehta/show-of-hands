@@ -22,7 +22,7 @@ div #poll-card {
 
 @media (min-width: 700px) {
     div.poll-list #poll-card {
-        width: 40%;
+        width: 48%;
     }   
 }
 
@@ -148,7 +148,7 @@ input[type="text"]:focus{
 .create-a-poll h1 {
     text-align: center;
     font-weight: normal;
-    font-variant: small-caps;
+    font-variant: normal !important;
 }
 
 .choices-list li {
@@ -408,3 +408,33 @@ input[type="submit"]:hover {
       text-align: center !important;
   }
   
+  #line {
+      width: 80% !important;
+  }
+
+  .profile-pic {
+    border-radius: 50% !important; 
+    box-shadow: #4b4d51;
+    width: 150px;
+    height: 150px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .d-email {
+      text-align: center;
+  }
+
+  .d-phone-number  {
+      text-align: center !important;
+  }
+
+  .d-change-number {
+      text-align: center !important;
+  }
+
+  .phone-number {
+      width: 40% !important;
+  }
+
