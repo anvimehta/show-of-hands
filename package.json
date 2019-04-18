@@ -32,6 +32,7 @@
     "numeral": "2.0.6",
     "react": "*",
     "react-addons-shallow-compare": "15.6.0",
+    "react-copy-to-clipboard": "^5.0.1",
     "react-dates": "12.3.0",
     "react-dom": "*",
     "react-google-charts": "^3.0.11",
