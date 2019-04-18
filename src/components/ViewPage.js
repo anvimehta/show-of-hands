@@ -34,7 +34,7 @@ class ViewPage extends React.Component {
 const mapDispatchToProps = (dispatch) => {
 	dispatch(listAllPolls());
 	return {
-		refresh: () => dispatch(listAllPolls());
+		refresh: () => dispatch(listAllPolls())
 	}
 };
 
