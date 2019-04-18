@@ -80,22 +80,21 @@ export class ViewPollItem extends React.Component {
 						Answer
 					</button>
 				</Link>
-				{ " " }
+
 				<button className="button" onClick={this.toggleLikePoll} id="view-like">
 					{ this.isLikedAlready() ? "Unlike" : "Like" }<br/>
 				</button>
 				{ " " }
 				</div>
 
-				<input value={this.state.value}
-          onChange={({target: {value}}) => this.setState({value, copied: false})} />
-
         <CopyToClipboard text={this.state.value}
           onCopy={() => this.setState({copied: true})}>
-          <button>Share This </button>
+          <button className="button" id="share-poll">
+					  Share This Poll
+					</button>
         </CopyToClipboard>
-
         {this.state.copied ? <span style={{color: 'red'}}>Copied.</span> : null}
+				{ " " }
 			</div>
 
 
