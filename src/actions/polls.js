@@ -45,7 +45,10 @@ export const startAddPoll = (pollData = {}) => {
         };
 
         poll.start_date = new Date(poll.start_date).getTime()
-        poll.end_date = new Date(poll.end_date).getTime()
+        poll.end_date = new Date(poll.end_date);
+        // Make the poll available till midnight
+        poll.end_date.setUTCHours(24);
+        poll.end_date = poll.end_date.getTime()
         poll.author = getState().auth.uid
 
         database.ref('polls').push(poll).then((ref) => {
