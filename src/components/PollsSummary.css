@@ -350,7 +350,7 @@ input[type="submit"]:hover {
     text-align: center;
     align-self: center;
     align-items: center;
-    margin-left: 45%;
+    margin-left: 43%;
 }
 
 #view-answer-first:hover {
@@ -452,6 +452,7 @@ input[type="submit"]:hover {
 }
 
 #created-by-me {
+    margin-left: 38%;
     background: #09665f !important;
 }
 

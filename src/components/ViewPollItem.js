@@ -67,33 +67,38 @@ export class ViewPollItem extends React.Component {
 			<div>
 				<ViewPollListItem uid={this.props.uid} data={poll} />
 				{
-					poll && poll.editable ? <Link to={`/polls/${id}/edit`}>
+					poll && poll.editable ? <div><Link to={`/polls/${id}/edit`}>
 						<button className="button" id="view-edit">
 							Edit
 						</button>
-					</Link> : null
-				}
-				{ " " }
-				<div>
-				<Link to={`/polls/${id}/answer`}>
+					</Link><Link to={`/polls/${id}/answer`}>
 					<button className="button" id="view-answer">
 						Answer
 					</button>
-				</Link>
-
-				<button className="button" onClick={this.toggleLikePoll} id="view-like">
+				</Link> <button className="button" onClick={this.toggleLikePoll} id="view-like">
 					{ this.isLikedAlready() ? "Unlike" : "Like" }<br/>
-				</button>
-				{ " " }
-				</div>
-
-        <CopyToClipboard text={this.state.value}
+				</button><CopyToClipboard text={this.state.value}
           onCopy={() => this.setState({copied: true})}>
           <button className="button" id="share-poll">
 					  Share This Poll
 					</button>
-        </CopyToClipboard>
-        {this.state.copied ? <span style={{color: 'red'}}>Copied.</span> : null}
+		</CopyToClipboard> </div> :  <div><Link to={`/polls/${id}/answer`}>
+					<button className="button" id="view-answer-first">
+						Answer
+					</button>
+				</Link> <button className="button" onClick={this.toggleLikePoll} id="view-like">
+					{ this.isLikedAlready() ? "Unlike" : "Like" }<br/>
+				</button><CopyToClipboard text={this.state.value}
+          onCopy={() => this.setState({copied: true})}>
+          <button className="button" id="share-poll">
+					  Share This Poll
+					</button>
+        </CopyToClipboard></div>
+				}
+				
+
+        
+        {this.state.copied ? alert('Link has been copied to clipboard!') : null}
 				{ " " }
 			</div>
 

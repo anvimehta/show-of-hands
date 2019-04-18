@@ -96,7 +96,7 @@ class DashboardPage extends React.Component {
                 <PhoneNumber className="phone-number"
                     phoneNumber={user.phone_number}
                     onChange={this.onUserDataChange.bind(this, "phone_number")}
-                /> </div>
+                /> </div><br/>
                 <button onClick={this.saveProfileData} id="save-button" className="button">Save</button>
                                   <br /><br />
                 {this.renderSelectedSection()}

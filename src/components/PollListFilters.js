@@ -48,7 +48,7 @@ export class PollListFilters extends React.Component {
     	return (
     		<div className="filters">
 			<br/>
-        		<span>Filter by</span><br/>
+        		<span>Filter by:</span><br/>
         		<select
         			id="select-category"
         			onChange={this.onCategoryChange}
