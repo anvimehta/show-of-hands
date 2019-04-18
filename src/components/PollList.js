@@ -4,8 +4,28 @@ import PollListItem from './PollListItem';
 import selectPolls from '../selectors/polls';
 import firebase from 'firebase/app'
 
+// import 'firebase/firestore'
+
+/*
+const db = firebase.firestore();
+db.collection("cities").doc("LA").set({
+	name: "Los Angeles",
+	state: "CA",
+	country: "USA"
+})
+.then(function() {
+	// console.log("Document successfully written!");
+})
+.catch(function(error) {
+	console.error("Error writing document: ", error);
+});
+*/
+
+
 class PollList extends React.Component {
+
 	render () {
+
 		const props = this.props;
 
 		if (!props.polls || props.polls == undefined || props.polls.length === 0) {
@@ -13,8 +33,9 @@ class PollList extends React.Component {
 		}
 
 		const pollItems = (
+
 			props.userPolls ? props.polls.filter(c => c.author === props.uid) :
-			props.answeredByUser ? props.polls.filter(c => (c.responses || {})[props.uid]) : props.polls;
+			props.answeredByUser ? props.polls.filter(c => (c.responses || {})[props.uid]) : props.polls
 		).map((poll) => {
 			return <PollListItem uid={props.uid} key={poll.id} data={poll} />;
 		});

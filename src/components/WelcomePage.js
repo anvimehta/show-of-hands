@@ -6,18 +6,20 @@ import { listAllPolls } from '../actions/polls';
 
 const WelcomePage = (props) => (
 	<div>
-		<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet"/>
-		<h1 className="trending-polls">Trending Polls</h1>
+	<div>
+	<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet"/>
+			<h1 className="trending-polls">Trending Polls</h1>
 		<TrendingList />
+	</div>
 	</div>
 )
 
 
 const mapDispatchToProps = (dispatch) => {
-	dispatch(listAllPolls());
+	dispatch(listAllPolls())
 	return {
-		refresh: () => dispatch(listAllPolls())
-	};
+	refresh: () => dispatch(listAllPolls())
+	}
 };
 
 export default connect(undefined, mapDispatchToProps)(WelcomePage);
