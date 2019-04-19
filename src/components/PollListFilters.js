@@ -71,7 +71,8 @@ export class PollListFilters extends React.Component {
         			placeholder="Search by keyword"
         		/>
 				<br/><br/>
-        		
+				
+        		<br/><br/>
         		<select
         			onChange={this.onSortChange}
         		>
