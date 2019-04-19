@@ -243,19 +243,19 @@ input[type="submit"]:hover {
 }
 .filters label {
     font-size: 20px;
-    margin-left: 1%;
+    margin-left: 10%;
     font-variant: normal;
 }
 
 .filters select {
-    margin-left: 2% !important;
-    width: 30%;
+    margin: 1%;
+    width: 50%;
     display: inline-block !important;
 }
 
 .filters input[type="text"] {
-    margin-left: 2% !important;
-    width: 30% !important;
+    margin-left: 10% !important;
+    width: 50% !important;
     display: inline-block !important;
 }
 
