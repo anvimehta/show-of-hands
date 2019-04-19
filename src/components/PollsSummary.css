@@ -115,7 +115,7 @@ input[type="text"]{
     block-size: 50px;
   width: 80%;
   padding: 12px 20px;
-  margin-left: 10%;
+  margin-left: 10% !important;
   display: inline-block;
   border: 1px solid transparent;
   border-radius: 4px;
@@ -249,13 +249,13 @@ input[type="submit"]:hover {
 
 .filters select {
     margin: 1%;
-    width: 50%;
+    width: 20%;
     display: inline-block !important;
 }
 
 .filters input[type="text"] {
     margin-left: 10% !important;
-    width: 50% !important;
+    width: 20% !important;
     display: inline-block !important;
 }
 

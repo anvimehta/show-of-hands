@@ -21,7 +21,17 @@
 }
 
 .button--secondary {
-  background: #888;
+  block-size: 50px;
+    width: 80%;
+    padding: 12px 20px;
+    display: inline-block;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    box-sizing: border-box;
+    outline-width: 1px;
+    background: #09665f;    
+    margin-left: 10% !important;
+    color: white;
 }
 
 #share-poll {
