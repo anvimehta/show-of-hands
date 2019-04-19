@@ -48,7 +48,7 @@ export class PollListFilters extends React.Component {
     	return (
     		<div className="filters">
 			<br/>
-        		<span>Filter and Sort:</span><br/>
+        		<span>Filter by:</span><br/>
         		<select
         			id="select-category"
         			onChange={this.onCategoryChange}
@@ -64,6 +64,7 @@ export class PollListFilters extends React.Component {
         			<option value="ACTIVE">Active Polls</option>
         			<option value="INACTIVE">Inactive Polls</option>
         		</select>
+        		<br/><br/>
 				<input
         			type="text"
         			value={this.state.textFilter || ""}
@@ -71,7 +72,19 @@ export class PollListFilters extends React.Component {
         			placeholder="Search by keyword"
         		/>
 				<br/><br/>
-        		
+        		<DateRangePicker
+        			startDate={filters ? filters.startDate : null}
+        			endDate={filters ? filters.endDate : null}
+        			onDatesChange={this.onDatesChange}
+        			focusedInput={this.state.calendarFocused}
+        			onFocusChange={this.onFocusChange}
+        			showClearDates={true}
+        			numberOfMonths={1}
+        			isOutsideRange={() => false}
+        		/>
+        		<br/><br/>
+        		<span>Sort:</span>
+				<br/>
         		<select
         			onChange={this.onSortChange}
         		>
