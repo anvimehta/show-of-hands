@@ -72,19 +72,7 @@ export class PollListFilters extends React.Component {
         			placeholder="Search by keyword"
         		/>
 				<br/><br/>
-        		<DateRangePicker
-        			startDate={filters ? filters.startDate : null}
-        			endDate={filters ? filters.endDate : null}
-        			onDatesChange={this.onDatesChange}
-        			focusedInput={this.state.calendarFocused}
-        			onFocusChange={this.onFocusChange}
-        			showClearDates={true}
-        			numberOfMonths={1}
-        			isOutsideRange={() => false}
-        		/>
-        		<br/><br/>
-        		<span>Sort:</span>
-				<br/>
+				
         		<select
         			onChange={this.onSortChange}
         		>
