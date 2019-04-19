@@ -72,7 +72,6 @@ export class PollListFilters extends React.Component {
         		/>
 				<br/><br/>
 				
-        		<br/><br/>
         		<select
         			onChange={this.onSortChange}
         		>
