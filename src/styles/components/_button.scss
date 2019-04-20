@@ -9,6 +9,11 @@
   line-height: 1;
   padding: $s-size;
   text-decoration: none;
+
+  align-content: center !important;
+  align-self: center !important;
+  align-items: center !important;
+  box-align: center !important;
 }
 
 .button--link {
@@ -16,5 +21,29 @@
 }
 
 .button--secondary {
-  background: #888;
+  block-size: 50px;
+    width: 80%;
+    padding: 12px 20px;
+    display: inline-block;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    box-sizing: border-box;
+    outline-width: 1px;
+    background: #09665f;    
+    margin-left: 10% !important;
+    color: white;
+}
+
+#share-poll {
+  display: inline-block;
+    margin-left: 1%;
+    background: #09665f;
+    border-radius: 10%;
+}
+
+#save-button {
+  display: inline-block;
+    background: #09665f;
+    border-radius: 10%;
+    margin-left: 48%;
 }

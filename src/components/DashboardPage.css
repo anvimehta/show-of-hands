@@ -1,5 +1,5 @@
 body {
-    background-color: white !important;
+    background-color: #ccdfff !important;
     border-style: hidden;
 }
 
@@ -13,7 +13,6 @@ body {
     background: none;
     color: #ffffff;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-variant: small-caps;
     font-size: 2rem;
     cursor: pointer;
     text-align: center;
@@ -29,7 +28,6 @@ body {
     background: none;
     color: #ffffff;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-variant: small-caps;
     font-size: 2rem;
     cursor: pointer;
     text-align: center;
@@ -39,10 +37,16 @@ body {
     text-align: center;
     color: white;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 100 !important;
 }
 
 .bigdiv {
     max-width: 10%;
     border-style: hidden;
     margin: 10%;
+}
+
+.my-dashboard {
+    align-self: center;
+    text-align: center !important;
 }

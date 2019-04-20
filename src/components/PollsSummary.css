@@ -10,9 +10,20 @@
     border: 1px;
     box-sizing: content-box;
     background-color: white !important;
-    width: 48%;
     margin: 1%;
     display: inline-block;
+
+}
+
+div #poll-card {
+    width: 48%;
+}
+
+
+@media (min-width: 700px) {
+    div.poll-list #poll-card {
+        width: 48%;
+    }   
 }
 
 #poll-card-link div {
@@ -26,44 +37,61 @@
 p {
     font-family: 'PT Sans', sans-serif !important;
 }
-  
-h1 {
-    position: relative;
-    border-style: double;
-    border-left-width: 0.5em;
-    margin: 50%;
-    font-family: 'PT Sans', sans-serif;
-    color: #13315b;
-    text-decoration: #fffcfc;
-    text-decoration-line: #fffcfc;
-    border-color: transparent;
+
+
+#poll-card h1 {
+    font-variant: normal;
+    margin: 2%;
+    font-weight: 500;
+    text-decoration: none !important;
+    text-decoration-line: none !important;
+    font-family: 'PT Sans', sans-serif; 
+    text-align: center;
 }
+
+#poll-card p {
+    margin-left: 5%;
+}
+
+#poll-card h3 {
+    margin-left: 5%;
+}
+
 h1:visited {
     color: #13315b;
     text-decoration: #fffcfc;
     text-decoration-line: #fffcfc;
+    font-weight: normal;
 }
 
 .header__title h1 {
-    
     text-align: left;
     border-style: none !important; 
     font-variant: small-caps;
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'PT Sans', sans-serif; 
     color: white;
+    font-weight: 100 !important;
+}
+
+
+.header__title h1:visited {
+    text-align: left;
+    border-style: none !important; 
+    font-variant: small-caps;
+    font-family: 'PT Sans', sans-serif; 
+    color: white;
+    font-weight: 100 !important;
 }
 
 h3 {
     color: black !important;
     font-family: 'PT Sans', sans-serif;
-    font-variant: small-caps;
     border-style: dotted;
-    border-color: #fffcfc;
-    border-left-width: 0.5em;
+    border-color: transparent;
 }
 
 p {
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'PT Sans', sans-serif ;
     margin-left: 1%;
     color: black !important;
 }
@@ -71,7 +99,7 @@ p {
 label {
     color: black !important;
     font-family: 'PT Sans', sans-serif;
-    margin-left: 1%;
+    margin-left: 5%;
 }
 
 .create-form label {
@@ -79,7 +107,7 @@ label {
 }
 
 span {
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'PT Sans', sans-serif ;
     color: black !important;
 }
 
@@ -87,7 +115,7 @@ input[type="text"]{
     block-size: 50px;
   width: 80%;
   padding: 12px 20px;
-  margin-left: 10%;
+  margin-left: 10% !important;
   display: inline-block;
   border: 1px solid transparent;
   border-radius: 4px;
@@ -119,6 +147,8 @@ input[type="text"]:focus{
 
 .create-a-poll h1 {
     text-align: center;
+    font-weight: bold;
+    font-variant: normal !important;
 }
 
 .choices-list li {
@@ -187,16 +217,15 @@ input[type="submit"] {
     border: 1px solid transparent;
     border-radius: 4px;
     box-sizing: border-box;
-    outline-color: #505050;
     outline-width: 1px;
-    background-color: #2b2d30;
+    background: #09665f;    
     margin-left: 10% !important;
     color: white;
 }
 
 input[type="submit"]:hover {
     cursor: pointer;
-    background-color: #4b4d51;
+    background: #074f49;
 }
 
 .viewing-polls h1 {
@@ -209,7 +238,7 @@ input[type="submit"]:hover {
 
 .filters span {
     margin-left: 10% !important;
-    font-variant: small-caps;
+    font-variant: normal;
     font-size: 30px;
 }
 .filters label {
@@ -220,21 +249,222 @@ input[type="submit"]:hover {
 
 .filters select {
     margin: 1%;
-    width: 50%;
+    width: 20%;
     display: inline-block !important;
 }
 
 .filters input[type="text"] {
     margin-left: 10% !important;
-    width: 50% !important;
+    width: 20% !important;
     display: inline-block !important;
 }
 
 .DateRangePicker {
     border: none;
-    border-color: white;
+    border-color: transparent;
     font-family: 'Arial';
     width: 50%;
     margin-left: 10%;
     display: inline-block !important;
+}
+
+#link {
+    color: hotpink !important;
+  }
+
+  a {
+      text-decoration: none !important;
+  }
+
+  #poll-card ul {
+    list-style-type: none;
+    list-style-position: outside;
+  }
+
+  #poll-card li::before {
+      content: "     •    " !important;
+      color: black !important;
+  }
+
+  .view-category {
+      margin-left: 30%;
+      font-weight: 100 !important;
+      font-variant: normal !important;
+  }
+
+  .view-description {
+      margin-left: 30%;
+  }
+
+  .view-choices {
+      margin-left: 30%;
+  }
+
+
+  #poll-cards ul {
+    list-style-type: none;
+    list-style-position: outside;
+  }
+  .view-ul {
+      margin-left: 1%;
+  }
+
+  #poll-cards li::before {
+      content: "     •    " !important;
+      color: black !important;
+      margin-left: 31% !important;
+  }
+  
+  .view-expiry {
+    margin-left: 30%; 
+  }
+
+  #view-edit {
+    display: inline-block; 
+    background: #09665f;
+    border-radius: 10%;
+    text-align: center;
+    align-self: center;
+    align-items: center;
+    margin-left: 40%;
+}
+
+#view-edit:hover {
+    background: #074f49;
+}
+#view-answer {
+    display: inline-block;
+    margin-left: 1%;
+    background: #09665f;
+    border-radius: 10%;
+}
+
+#view-answer:hover {
+    background: #074f49;
+}
+
+#view-answer-first {
+    display: inline-block; 
+    background: #09665f;
+    border-radius: 10%;
+    text-align: center;
+    align-self: center;
+    align-items: center;
+    margin-left: 43%;
+}
+
+#view-answer-first:hover {
+    background: #074f49;
+   
+}
+
+#view-like {
+    display: inline-block;
+    margin-left: 1%;
+    background: #09665f;
+    border-radius: 10%;
+}
+
+#view-like:hover {
+    background: #074f49;
+}
+
+#likes {
+    font-variant: small-caps;
+    text-align: right;
+    margin-right: 5%;
+    font-size: 25px;
+}
+
+.view-like {
+    text-align: right;
+    text-align: center !important;
+    font-variant: small-caps;
+    font-size: 30px;
+}
+
+#view-poll-item {
+    align-content: center;
+    align-self: center;
+}
+
+#overlay {
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0; 
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+  }
+
+  .p {
+      margin-top: 2%;
+      text-align: center !important;
+  }
+  
+  #line {
+      width: 80% !important;
+  }
+
+  .profile-pic {
+    border-radius: 50% !important; 
+    box-shadow: #4b4d51;
+    width: 150px;
+    height: 150px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .d-email {
+      text-align: center;
+  }
+
+  .d-phone-number  {
+      text-align: center !important;
+  }
+
+  .d-change-number {
+      text-align: center !important;
+  }
+
+  .phone-number {
+      width: 40% !important;
+  }
+
+  input[type="tel"] {
+      width: 100% !important;
+      margin-left: 40% !important;
+      margin-right: 40%;
+      display: inline-block !important;
+}
+.react-phone-number-input__icon {
+    height: 0%;
+    width: 0%;
+}
+.button {
+    display: inline-block;
+}
+
+#created-by-me {
+    margin-left: 38%;
+    background: #09665f !important;
+}
+
+
+#created-by-me.active {
+    background: #074f49 !important;  
+}
+
+#answered-by-me {
+    background: #09665f !important;
+}
+
+#amswered-by-me.active {
+    background: #074f49 !important;  
 }

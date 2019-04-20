@@ -1,10 +1,10 @@
 .header {
-  background: #2b2d30;
+  background: #09665f;
 }
 
 body 
 {
-  background-color: #f7f7f7 !important;
+  background-color: #e0f9f8 !important;
 }
 .header__content {
   align-items: center;
@@ -34,7 +34,6 @@ h1:link
 .poll-title h1{
   text-align: left;
   margin-left: 10%;
-  font-variant: small-caps;
 }
 
 .poll-title h1:visited {
@@ -43,23 +42,37 @@ h1:link
 .trending-polls {
   font-family: 'PT Sans', sans-serif;
   border: none;
-  font-variant: small-caps;
-  text-align: center;
+  text-align: center !important;
   font-size: 40px;
+  font-variant: normal !important;
+  font-weight: bold !important;
 }
 
+.viewing-polls {
+  font-family: 'PT Sans', sans-serif !important;
+  border: none !important;
+  text-align: center !important;
+  font-size: 20px !important;
+  font-variant: normal !important;
+  font-weight: normal !important;
+}
+
+.poll-title h3 {
+  border: none !important;
+}
 
  .navbar ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #2b2d30;
+  background-color: #09665f;
 }
 
 .navbar li {
   float: left;
 }
+
 
  li a {
   font-family: 'PT Sans', sans-serif;
@@ -73,5 +86,20 @@ h1:link
 
 li a:hover
 {
+  cursor: pointer;
   color: #d2d4d8;
+}
+
+.card-likes {
+  text-align: right;
+  margin-right: 5%;
+  font-size: 20px;
+}
+
+.page-header {
+  background-color: transparent !important;
+  text-align: center;
+  h1 {
+    font-weight: bold !important;
+  }
 }

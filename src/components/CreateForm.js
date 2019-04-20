@@ -150,7 +150,7 @@ class CreateForm extends React.Component {
 			end_date: this.state.end_date,
 			public_results: this.state.public_results,
 			responders: [],
-			user_id: 0
+			user_id:0
 		});
 	}
 	render() {
@@ -221,7 +221,7 @@ class CreateForm extends React.Component {
 				<input
 					type="date"
 					value={this.state.end_date}
-					min={this.getDate(0, 1)}
+					min={this.getDate(0, 0)}
 					max={this.getDate(1, 0)}
 					onChange={e => this.updateValue(e, 'end_date')}/>
 				<br/>

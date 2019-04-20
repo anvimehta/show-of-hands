@@ -26,25 +26,29 @@ class PollList extends React.Component {
 
 	render () {
 
-	const props = this.props;
+		const props = this.props;
 
-	if (!props.polls || props.polls.length === 0) {
-		return <p>No polls</p>;
-	}
+		if (!props.polls || props.polls == undefined || props.polls.length === 0) {
+			return <p>No polls</p>;
+		}
 
-	const pollItems = props.polls.map((poll) => {
-		return <PollListItem uid={props.uid} key={poll.id} data={poll} />;
-	});
+		const pollItems = (
 
-	return <div>{pollItems}</div>;
+			props.userPolls ? props.polls.filter(c => c.author === props.uid) :
+			props.answeredByUser ? props.polls.filter(c => (c.responses || {})[props.uid]) : props.polls
+		).map((poll) => {
+			return <PollListItem uid={props.uid} key={poll.id} data={poll} />;
+		})
+
+		return <div className="poll-list">{pollItems}</div>;
 	}
 }
 
 const mapStateToProps = (state) => {
 	const polls = selectPolls(state.polls, state.filters);
 	return {
-	polls,
-	uid: state.auth.uid
+		polls,
+		uid: state.auth.uid
 	};
 };
 

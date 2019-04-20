@@ -29,3 +29,26 @@ button:disabled {
 .is-active {
   font-weight: bold;
 }
+
+.error-alert {
+  color: black;
+  text-align: left;
+  padding: 10px;
+  font-weight: bold;
+}
+
+button.button.active {
+    background: #155d82;
+}
+
+.like {
+  text-align: right;
+  margin-right: 10%;
+  font-size: 20px;
+}
+
+
+#my-dashboard {
+  align-self: center;
+  text-align: center !important;
+}

@@ -48,7 +48,7 @@ export class PollListFilters extends React.Component {
     	return (
     		<div className="filters">
 			<br/>
-        		<span>Filter by</span><br/>
+        		<span>Filter and sort:</span><br/>
         		<select
         			id="select-category"
         			onChange={this.onCategoryChange}
@@ -56,7 +56,7 @@ export class PollListFilters extends React.Component {
         			<option value="">Select Category</option>
         			{getCategoryOptions()}
         		</select>
-        		
+
         		<select
         			onChange={this.onStatusChange}
         		>
@@ -64,27 +64,13 @@ export class PollListFilters extends React.Component {
         			<option value="ACTIVE">Active Polls</option>
         			<option value="INACTIVE">Inactive Polls</option>
         		</select>
-        		<br/><br/>
 				<input
         			type="text"
         			value={this.state.textFilter || ""}
         			onChange={this.onTextChange}
         			placeholder="Search by keyword"
         		/>
-				<br/><br/>
-        		<DateRangePicker
-        			startDate={filters ? filters.startDate : null}
-        			endDate={filters ? filters.endDate : null}
-        			onDatesChange={this.onDatesChange}
-        			focusedInput={this.state.calendarFocused}
-        			onFocusChange={this.onFocusChange}
-        			showClearDates={true}
-        			numberOfMonths={1}
-        			isOutsideRange={() => false}
-        		/>
-        		<br/><br/>
-        		<span>Sort:</span>
-				<br/>
+				
         		<select
         			onChange={this.onSortChange}
         		>
@@ -93,6 +79,8 @@ export class PollListFilters extends React.Component {
         			<option value="DATE_DESC">Date (newest first)</option>
         			<option value="NUMBER_OF_RESPONSES_ASC">Number of Responses (asc.)</option>
         			<option value="NUMBER_OF_RESPONSES_DESC">Number of Responses (desc.)</option>
+        			<option value="NUMBER_OF_LIKES_ASC">Number of Likes (asc.)</option>
+        			<option value="NUMBER_OF_LIKES_DESC">Number of Likes (desc.)</option>
         		</select>
 				<br/>
         		<hr/>

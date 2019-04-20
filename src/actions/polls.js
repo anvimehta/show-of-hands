@@ -4,6 +4,8 @@ import firebase from '../firebase/firebase';
 
 // Check if the poll is expired
 const isExpired = poll => new Date(poll.end_date) < new Date()
+const likeCount = poll => Object.keys(poll.likes || {}).length
+const countResponses = r => Object.keys(r.responses || {}).length
 
 export const listAllPolls = (pollData = {}) => {
   return (dispatch) => {
@@ -11,6 +13,8 @@ export const listAllPolls = (pollData = {}) => {
       polls = polls.val()
       const pollsArray = Object.keys(polls).map(id => {
         polls[id].id = id
+        polls[id].like_count = likeCount(polls[id])
+        polls[id].response_count = countResponses(polls[id])
         return polls[id]
       })
       dispatch(listPolls(pollsArray))
@@ -41,7 +45,10 @@ export const startAddPoll = (pollData = {}) => {
         };
 
         poll.start_date = new Date(poll.start_date).getTime()
-        poll.end_date = new Date(poll.end_date).getTime()
+        poll.end_date = new Date(poll.end_date);
+        // Make the poll available till midnight
+        poll.end_date.setUTCHours(24);
+        poll.end_date = poll.end_date.getTime()
         poll.author = getState().auth.uid
 
         database.ref('polls').push(poll).then((ref) => {
@@ -58,10 +65,13 @@ export const startGetPoll = (pollData = {}) => {
       const poll = ref.val()
       poll.id = ref.key
       poll.editable = (poll.author === getState().auth.uid)
-        if (pollData.edit && !poll.editable || isExpired(poll)) {
+        if (pollData.edit && !poll.editable) {
         window.location = "/polls"
-        return;
+        return
       }
+      poll.is_expired = isExpired(poll)
+      poll.like_count = likeCount(poll)
+      poll.response_count = countResponses(poll)
       dispatch(getPoll(poll));
     }).catch(e => console.error(e))
   };
@@ -70,7 +80,6 @@ export const startGetPoll = (pollData = {}) => {
 export const startAnswerPoll = (id, answerIndex, userId, newVotesCount) => {
   return (dispatch) => {
     const pollRef = database.ref('polls').child(id);
-
 
     Promise.all([
       pollRef.child("choices").child(answerIndex).child("votes").set(newVotesCount),
