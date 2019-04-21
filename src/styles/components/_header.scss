@@ -91,9 +91,14 @@ li a:hover
 }
 
 .card-likes {
-  text-align: right;
-  margin-right: 5%;
+  text-align: right !important;
+  margin-left: 55% !important;
   font-size: 20px;
+  display: inline-block;
+}
+
+.date {
+  display: inline-block;
 }
 
 .page-header {

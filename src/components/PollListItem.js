@@ -84,8 +84,8 @@ class PollListItem extends React.Component {
 						</div>
 					</div>
 
-					<p>Expire{(new Date() > this.poll.end_date ? 'd' : 's')} on: {moment(new Date(this.poll.end_date)).format("YYYY-MM-DD")}</p>
-					<p className="card-likes">{this.poll.like_count} likes </p>
+					<p className="date">Expire{(new Date() > this.poll.end_date ? 'd' : 's')} on: {moment(new Date(this.poll.end_date)).format("YYYY-MM-DD")}</p>
+					<p className="card-likes">{this.poll.like_count} like{this.poll.like_count != 1 ? 's' : ''} </p>
 
 			</div>
 			</Link>

@@ -264,10 +264,13 @@ input[type="submit"]:hover {
 }
 
 .filters input[type="text"] {
-    margin-left: 10% !important;
-    width: 20% !important;
+    margin-left: 36% !important;
     display: inline-block !important;
     padding: none;
+    text-align: center;
+    width: 30%;
+    margin-right: 40% !important;
+    
 }
 
 .DateRangePicker {

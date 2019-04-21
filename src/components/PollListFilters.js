@@ -53,25 +53,18 @@ export class PollListFilters extends React.Component {
         			id="select-category"
         			onChange={this.onCategoryChange}
         		>
-        			<option value="">Select Category</option>
+        			<option value="">Filter by Category</option>
         			{getCategoryOptions()}
         		</select>
 
         		<select
         			onChange={this.onStatusChange}
         		>
-        			<option selected value="">Select Active Status</option>
+        			<option selected value="">Filter by Active Status</option>
         			<option value="ACTIVE">Active Polls</option>
         			<option value="INACTIVE">Inactive Polls</option>
         		</select>
-				<input
-        			type="text"
-        			value={this.state.textFilter || ""}
-        			onChange={this.onTextChange}
-        			placeholder="Search by keyword"
-        		/>
-				
-        		<select className="sort-view"
+				<select className="sort-view"
         			onChange={this.onSortChange}
         		>
 					<option value ="">Sort by</option>
@@ -82,6 +75,15 @@ export class PollListFilters extends React.Component {
         			<option value="NUMBER_OF_LIKES_ASC">Number of Likes (asc.)</option>
         			<option value="NUMBER_OF_LIKES_DESC">Number of Likes (desc.)</option>
         		</select>
+				
+				<input
+        			type="text"
+        			value={this.state.textFilter || ""}
+        			onChange={this.onTextChange}
+        			placeholder="Search by keyword"
+        		/>
+				<br/>
+        		
 				<br/>
         		<hr/>
 				<br/>
