@@ -7,7 +7,7 @@ const filtersReducerDefaultState = {
   sortBy: 'date',
   startDate: moment().startOf('month'),
   endDate: moment().endOf('month'),
-  pollStatus: "ACTIVE"
+  pollStatus: ""
 };
 
 export default (state = filtersReducerDefaultState, action) => {

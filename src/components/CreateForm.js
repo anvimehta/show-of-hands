@@ -1,5 +1,6 @@
 import React from 'react';
 import CATEGORIES, { getCategoryOptions } from '../util/categories.js';
+import moment from 'moment';
 
 // Component for one choice in the poll
 function Choice(props) {
@@ -47,13 +48,13 @@ class CreateForm extends React.Component {
 	if (props.poll && props.poll.id) {
 		this.setState({
 			title: props.poll.title,
-			description: props.poll.title,
+			description: props.poll.description,
 			textChoices: (props.poll.choices || []).map(c => c.text),
 			choices: props.poll.choices || [],
 			category: props.poll.category,
 			newChoiceText: '',
 			start_date: props.poll.start_date,
-			end_date: props.poll.end_date,
+			end_date: moment(new Date(props.poll.end_date)).format("YYYY-MM-DD"),
 			public_results: props.poll.public_results
 		})
 	}

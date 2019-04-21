@@ -95,3 +95,11 @@ li a:hover
   margin-right: 5%;
   font-size: 20px;
 }
+
+.page-header {
+  background-color: transparent !important;
+  text-align: center;
+  h1 {
+    font-weight: bold !important;
+  }
+}

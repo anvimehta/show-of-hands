@@ -37,6 +37,9 @@ export class EditPollPage extends React.Component {
 			onSubmit={this.onSubmit}
 			/>
 			<button className="button button--secondary" onClick={this.onRemove}>Remove Poll</button>
+
+		<br/>
+		<br/>
 		</div>
 		</div>
 	);
