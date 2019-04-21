@@ -35,19 +35,16 @@ export class AnswerPollPage extends React.Component {
 		if ((this.state && this.state.poll_answered) || Object(this.props.poll.responses)[this.props.uid]) {
 			return (
 				<div>
-					<div className="page-header">
-						<div className="content-container">
-							<h1 className="page-header__title">Answer Poll</h1>
-						</div>
-					</div>
 					<div className="content-container">
-						<h3>{this.props.poll.title}</h3>
-						<p>{this.props.poll.description}</p>
+						<h3 className="answer-view">{this.props.poll.title}</h3>
+						<p className="description-view">{this.props.poll.description}</p>
+						<p className="you-have-answered"><strong>You have already answered this poll.</strong></p>
 						<div className="answers">
-							<p><strong>You have answered the poll.</strong></p>
-							<a href={`/polls/${this.props.poll.id}`}>
-								View the poll
+							<a className="view-the-poll" href={`/polls/${this.props.poll.id}`}>
+								
+						<button className="view-view">View the poll</button>
 							</a>
+							
 						</div>
 					</div>
 				</div>
@@ -56,14 +53,9 @@ export class AnswerPollPage extends React.Component {
 
 		return (
 			<div>
-				<div className="page-header">
-					<div className="content-container">
-						<h1 className="page-header__title">Answer Poll</h1>
-					</div>
-				</div>
 				<div className="content-container">
-					<h3>{this.props.poll.title}</h3>
-					<p>{this.props.poll.description}</p>
+					<h3 className="answer-view">{this.props.poll.title}</h3>
+					<p className="description-view">{this.props.poll.description}</p>
 					<div className="answers">
 						{
 							this.props.poll.choices.map((choice, index) => {
@@ -75,14 +67,14 @@ export class AnswerPollPage extends React.Component {
 											value={index}
 											onChange={this.handleAnswerChange}
 										/>
-										{" "}
-										<span>{choice.text}</span>
+										{"    "}
+										<span>       {choice.text}</span>
 									</label>
 								</div>
 							})
 						}
 					</div><br/>
-					<button className="button button--secondary" onClick={this.answerPoll}>Answer Poll</button>
+					<button className="button button--secondary" id="answer-poll" onClick={this.answerPoll}>Answer Poll</button>
 				</div>
 			</div>
 		);

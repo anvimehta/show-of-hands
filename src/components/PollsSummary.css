@@ -20,6 +20,11 @@ div #poll-card {
 }
 
 
+.sort-view {
+    margin-left: 10% !important;
+}
+
+
 @media (min-width: 700px) {
     div.poll-list #poll-card {
         width: 48%;
@@ -249,14 +254,20 @@ input[type="submit"]:hover {
 
 .filters select {
     margin: 1%;
-    width: 50%;
+    margin-left: 10% !important;
+    width: 20%;
     display: inline-block !important;
+}
+
+#select-category {
+    margin-left: 10% !important;
 }
 
 .filters input[type="text"] {
     margin-left: 10% !important;
-    width: 50% !important;
+    width: 20% !important;
     display: inline-block !important;
+    padding: none;
 }
 
 .DateRangePicker {
@@ -465,6 +476,67 @@ input[type="submit"]:hover {
     background: #09665f !important;
 }
 
-#amswered-by-me.active {
+#answered-by-me.active {
     background: #074f49 !important;  
+}
+
+
+.answer-view {
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 0%;
+}
+
+.description-view {
+    text-align: center !important;
+}
+
+.answer-radio {
+    margin-top: 0.5% !important;
+}
+
+input[type="radio"] {
+    background-color: hotpink !important;
+}
+
+#answer-poll {
+    background: #09665f;
+    border-radius: 10%;
+    display: block;
+    margin: 0 auto;
+}
+
+#answer-poll:hover {
+    background: #074f49;
+}
+
+.answers {
+    text-align: center;
+}
+
+.view-view {
+    padding: 13px 13px !important; 
+    background: #09665f;
+    border-radius: 10%;
+    display: block;
+    margin: 0 auto;   
+    color: white !important;
+    font-family: 'PT Sans', sans-serif ;
+    margin-top: 5% !important;
+}
+
+.view-view:visited {
+    color: white !important;
+}
+
+.view-view:hover {
+    background: #074f49;
+}
+
+.view-the-poll {
+    color: white !important;
+}
+
+.you-have-answered {
+    text-align: center;
 }

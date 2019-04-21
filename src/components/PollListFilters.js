@@ -48,7 +48,7 @@ export class PollListFilters extends React.Component {
     	return (
     		<div className="filters">
 			<br/>
-        		<span>Filter by:</span><br/>
+        		
         		<select
         			id="select-category"
         			onChange={this.onCategoryChange}
@@ -64,16 +64,14 @@ export class PollListFilters extends React.Component {
         			<option value="ACTIVE">Active Polls</option>
         			<option value="INACTIVE">Inactive Polls</option>
         		</select>
-        		<br/><br/>
 				<input
         			type="text"
         			value={this.state.textFilter || ""}
         			onChange={this.onTextChange}
         			placeholder="Search by keyword"
         		/>
-				<br/><br/>
 				
-        		<select
+        		<select className="sort-view"
         			onChange={this.onSortChange}
         		>
 					<option value ="">Sort by</option>

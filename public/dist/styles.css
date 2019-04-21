@@ -565,6 +565,7 @@ textarea {
  */
 [type="checkbox"],
 [type="radio"] {
+  background-color: hotpink !important;
   box-sizing: border-box;
   /* 1 */
   padding: 0;
