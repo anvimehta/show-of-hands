@@ -15,6 +15,9 @@ export const listAllPolls = (pollData = {}) => {
         polls[id].id = id
         polls[id].like_count = likeCount(polls[id])
         polls[id].response_count = countResponses(polls[id])
+        if (typeof polls[id].end_date === "string") {
+          polls[id].end_date = new Date(polls[id].end_date).getTime()
+        }
         return polls[id]
       })
       dispatch(listPolls(pollsArray))
