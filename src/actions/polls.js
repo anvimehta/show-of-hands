@@ -22,6 +22,15 @@ export const listAllPolls = (pollData = {}) => {
   };
 };
 
+
+const pollBeforeSave = poll => {
+    poll.start_date = new Date(poll.start_date).getTime()
+    poll.end_date = new Date(poll.end_date);
+    // Make the poll available till midnight
+    poll.end_date.setUTCHours(24);
+    poll.end_date = poll.end_date.getTime()
+}
+
 export const startAddPoll = (pollData = {}) => {
     return (dispatch, getState) => {
         const {
@@ -44,11 +53,8 @@ export const startAddPoll = (pollData = {}) => {
             public_results
         };
 
-        poll.start_date = new Date(poll.start_date).getTime()
-        poll.end_date = new Date(poll.end_date);
-        // Make the poll available till midnight
-        poll.end_date.setUTCHours(24);
-        poll.end_date = poll.end_date.getTime()
+        pollBeforeSave(poll);
+        
         poll.author = getState().auth.uid
 
         database.ref('polls').push(poll).then((ref) => {
@@ -94,6 +100,8 @@ export const startAnswerPoll = (id, answerIndex, userId, newVotesCount) => {
 
 export const startEditPoll = (id, newData) => {
     return (dispatch) => {
+        pollBeforeSave(newData)
+        delete newData.start_date
         database.ref('polls').child(id).update(newData).then(() => {
             dispatch(editPoll({
                 id
