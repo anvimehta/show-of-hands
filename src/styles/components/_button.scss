@@ -1,6 +1,10 @@
+* {
+  font-family: 'PT Sans', sans-serif;
+}
+
 .button {
   font-family: 'PT Sans', sans-serif;
-  background: $blue;
+  background: #09665f;
   border: none;
   color: white;
   display: inline-block;
@@ -9,7 +13,7 @@
   line-height: 1;
   padding: $s-size;
   text-decoration: none;
-
+  border-radius: 10%;
   align-content: center !important;
   align-self: center !important;
   align-items: center !important;
@@ -46,4 +50,9 @@
     background: #09665f;
     border-radius: 10%;
     margin-left: 48%;
+}
+
+#login-buton {
+  background: #09665f;
+  border-radius: 10%;
 }
